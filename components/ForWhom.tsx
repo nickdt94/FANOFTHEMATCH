@@ -1,8 +1,8 @@
 import React from 'react';
-import { Users, Megaphone, TrendingUp, Lightbulb } from 'lucide-react';
+import { Camera, HelpCircle, Sparkles } from 'lucide-react';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
-const RoleCard = ({ IconComponent, title, description, delay }: { 
+const FeatureCard = ({ IconComponent, title, description, delay }: { 
     IconComponent: React.ComponentType<{ className?: string }>, 
     title: string, 
     description: string, 
@@ -12,8 +12,8 @@ const RoleCard = ({ IconComponent, title, description, delay }: {
     return (
         <div ref={ref} className={`bg-card-custom p-8 scroll-animate h-full ${delay} ${isVisible ? 'is-visible' : ''}`}>
             <IconComponent className="w-8 h-8 lime-text mb-6" />
-            <h3 className="font-bold text-xl lime-text mb-2">{title}</h3>
-            <p className="text-inactive">{description}</p>
+            <h3 className="font-bold text-xl lime-text mb-4">{title}</h3>
+            <p className="text-inactive leading-relaxed">{description}</p>
         </div>
     );
 };
@@ -22,43 +22,37 @@ const ForWhom: React.FC = () => {
     const [titleRef, isTitleVisible] = useIntersectionObserver<HTMLHeadingElement>({ threshold: 0.1 });
     const [subtitleRef, isSubtitleVisible] = useIntersectionObserver<HTMLParagraphElement>({ threshold: 0.1 });
 
-    const roles = [
+    const features = [
         {
-            IconComponent: Users,
-            title: "Fan Engagement Manager",
-            description: "Verhoog de sfeer en betrokkenheid tijdens de rust met een activatie die met minimale inspanning live gaat.",
+            IconComponent: Camera,
+            title: "FANCAM",
+            description: "Capture unforgettable stadium moments from your fans' perspective! Our FanCam transforms in-stadium interaction by making fans the stars themselves, using their own mobile devices. With a single tap, they can capture their unique moment and personalize it with custom filters in your club's style.",
             delay: ""
         },
         {
-            IconComponent: Megaphone,
-            title: "Sponsorship Manager",
-            description: "Toon de waarde aan sponsors met een meetbare, interactieve activatie die hun merk live in de schijnwerpers zet.",
+            IconComponent: HelpCircle,
+            title: "QUIZ",
+            description: "Transform your match day into an unforgettable, interactive experience with Fan of the Match. Fans use their smartphone to join real-time quizzes and interactive challenges. Their participation is displayed live on the stadium screen, creating thrilling, shared moments for everyone.",
             delay: "delay-100"
         },
         {
-            IconComponent: TrendingUp,
-            title: "Marketing Director / CMO",
-            description: "Start laagdrempelig met een innovatieve tool die direct resultaat oplevert en de deur opent naar grotere campagnes.",
+            IconComponent: Sparkles,
+            title: "CONTENTWALL",
+            description: "Get ready to light up the stadium! Our groundbreaking AI technology instantly transforms your selfie into a spectacular, themed creation, showcased live on the giant screen! Simply scan the QR code, upload your photo, and watch as our AI conjures your personalized image in seconds.",
             delay: "delay-200"
-        },
-        {
-            IconComponent: Lightbulb,
-            title: "Experience / Innovatie Manager",
-            description: "Verzamel live statistieken, sentiment en data van duizenden fans tegelijk met een razendsnelle lancering.",
-            delay: "delay-300"
         }
     ];
 
     return (
-        <section id="for-who" className="py-20 bg-brand-bg">
+        <section id="features" className="py-20 bg-brand-bg">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 ref={titleRef} className={`text-4xl md:text-5xl font-black scroll-animate ${isTitleVisible ? 'is-visible' : ''}`}>Een Oplossing voor Iedere Rol</h2>
-                    <p ref={subtitleRef} className={`text-lg text-main mt-4 max-w-2xl mx-auto scroll-animate delay-100 ${isSubtitleVisible ? 'is-visible' : ''}`}>Fan of the Match is ontworpen om specifieke uitdagingen binnen uw organisatie aan te pakken.</p>
+                    <h2 ref={titleRef} className={`text-4xl md:text-5xl font-black scroll-animate ${isTitleVisible ? 'is-visible' : ''}`}>Onze Innovatieve Tools</h2>
+                    <p ref={subtitleRef} className={`text-lg text-main mt-4 max-w-2xl mx-auto scroll-animate delay-100 ${isSubtitleVisible ? 'is-visible' : ''}`}>Fan of the Match biedt drie krachtige features om de fan experience naar een hoger niveau te tillen.</p>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {roles.map((role, index) => (
-                        <RoleCard key={index} {...role} />
+                <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                    {features.map((feature, index) => (
+                        <FeatureCard key={index} {...feature} />
                     ))}
                 </div>
             </div>

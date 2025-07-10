@@ -80,7 +80,7 @@ export default function Home() {
       <Cases />
       <Product />
       <Ecosystem />
-      <ForWhom />
+      {/* <ForWhom /> */}
       <Contact />
       <Footer />
     </main>

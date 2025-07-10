@@ -30,7 +30,7 @@ const Product: React.FC = () => {
             id: 'fancam',
             title: 'FANCAM 🎬📱',
             subtitle: '100% Personal • LIVE Stadium',
-            description: 'Capture unforgettable stadium moments from your fans\' perspective! Our FanCam transforms in-stadium interaction by making fans the stars themselves, using their own mobile devices. With a single tap, they can capture their unique moment and personalize it with custom filters in your club\'s style.',
+            description: 'Visual: Floating phone with camera flash + stadium screen. Capture personal moments with stadium-wide impact.',
             icon: Camera,
             color: '#3CB878', // brand green
             gradient: 'from-green-500/20 to-emerald-500/20'
@@ -39,7 +39,7 @@ const Product: React.FC = () => {
             id: 'quiz',
             title: 'QUIZ ❓⚡', 
             subtitle: 'REAL Time • MAX Engage',
-            description: 'Transform your match day into an unforgettable, interactive experience with Fan of the Match. Fans use their smartphone to join real-time quizzes and interactive challenges. Their participation is displayed live on the stadium screen, creating thrilling, shared moments for everyone.',
+            description: 'Visual: Pulsating question + multiple phones + engagement waves. Real-time quiz engagement at maximum impact.',
             icon: HelpCircle,
             color: '#ef4444', // energetic red
             gradient: 'from-red-500/20 to-orange-500/20'
@@ -48,7 +48,7 @@ const Product: React.FC = () => {
             id: 'contentwall',
             title: 'CONTENTWALL ✨🦸‍♂️',
             subtitle: 'AI Powered • VIRAL Ready',
-            description: 'Get ready to light up the stadium! Our groundbreaking AI technology instantly transforms your selfie into a spectacular, themed creation, showcased live on the giant screen! Simply scan the QR code, upload your photo, and watch as our AI conjures your personalized image in seconds.',
+            description: 'Visual: AI transformation from selfie to superhero + big screen display. AI-powered content that goes viral instantly.',
             icon: Sparkles,
             color: '#f59e0b', // golden glow
             gradient: 'from-yellow-500/20 to-amber-500/20'
@@ -90,7 +90,7 @@ const Product: React.FC = () => {
                                 </div>
                                 
                                 {/* Animation Area - Only render when visible */}
-                                {/* <div className="scene-card-animation">
+                                <div className="scene-card-animation">
                                     {isVisible && scene.id === 'fancam' && (
                                         <div className="fancam-arena-card">
                                             <div className="floating-phone">
@@ -220,7 +220,7 @@ const Product: React.FC = () => {
                                             </div>
                                         </div>
                                     )}
-                                </div> */}
+                                </div>
                             </div>
                             
                             {/* Scene Number */}
