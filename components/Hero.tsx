@@ -1,27 +1,6 @@
 import React from 'react';
 
 const Hero: React.FC = () => {
-  // Function to handle smooth scrolling, accounting for the fixed header
-  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const targetId = e.currentTarget.getAttribute('href');
-    if (!targetId) return;
-    
-    const id = targetId.substring(1);
-    const targetElement = document.getElementById(id);
-
-    if (targetElement) {
-      const headerOffset = 80; // Height of fixed header + extra space for better visibility
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <section id="home" className="hero-video-bg pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden min-h-[70vh]">
         {/* Video Background */}
