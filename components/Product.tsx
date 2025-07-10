@@ -1,29 +1,9 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Camera, HelpCircle, Sparkles, Calendar, X } from 'lucide-react';
 
 const Product: React.FC = () => {
     const [showDemoModal, setShowDemoModal] = useState(false);
-    const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef<HTMLElement>(null);
-
-    // Intersection Observer for performance optimization
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.disconnect(); // Stop observing once visible
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
-        return () => observer.disconnect();
-    }, []);
 
     const scenes = [
         {

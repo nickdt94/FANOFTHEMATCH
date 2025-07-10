@@ -8,7 +8,6 @@ import Product from '@/components/Product'
 import StadiumExperience from '@/components/StadiumExperience'
 import Cases from '@/components/Cases'
 import Ecosystem from '@/components/Ecosystem'
-import ForWhom from '@/components/ForWhom'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
