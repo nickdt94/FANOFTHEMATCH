@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { ArrowLeft, Users, Target, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
 import { caseStudies, createSlug } from '@/data/cases'
+import Spotlight from '@/components/Spotlight'
 
 // Enhanced case data with additional images and metrics
 const enhancedCaseData = {
@@ -158,7 +159,7 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
 
     return (
         <main className="min-h-screen bg-brand-bg">
-            <div className="spotlight"></div>
+            <Spotlight />
             
             {/* Header */}
             <header className="fixed top-0 left-0 right-0 z-50 bg-brand-bg/80 backdrop-blur-sm border-b border-brand-border">

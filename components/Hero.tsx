@@ -23,11 +23,11 @@ const Hero: React.FC = () => {
         </div>
         
         <div className="container mx-auto px-6 text-center relative z-10">
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-4">Connecting fans with what they love</h1>
-            <p className="text-lg md:text-xl text-main max-w-3xl mx-auto mb-16">De laagdrempelige tool om duizenden fans tegelijk te betrekken, waardevolle data te verzamelen en sponsoractivaties tot leven te brengen.</p>
+            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-4">Turn Every Fan Into Your Brand Ambassador</h1>
+            <p className="text-lg md:text-xl text-main max-w-3xl mx-auto mb-16">The simple tool to engage thousands of fans simultaneously, collect valuable data, and bring sponsor activations to life.</p>
             
             {/* Statistics Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto">
               <div className="stat-card">
                 <div className="stat-icon">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
                   </svg>
                 </div>
                 <div className="stat-number">25<span className="stat-unit">min</span></div>
-                <div className="stat-title">Gemiddelde speeltijd van hypercasual games</div>
+                <div className="stat-title">Average playtime of hypercasual games</div>
               </div>
               
               <div className="stat-card">
@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
                   </svg>
                 </div>
                 <div className="stat-number">87<span className="stat-unit">%</span></div>
-                <div className="stat-title">Hogere merkherinnering</div>
+                <div className="stat-title">Higher brand recall</div>
               </div>
               
               <div className="stat-card">
@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
                   </svg>
                 </div>
                 <div className="stat-number">340<span className="stat-unit">%</span></div>
-                <div className="stat-title">Meer data verzameling</div>
+                <div className="stat-title">More data collection</div>
               </div>
             </div>
         </div>

@@ -41,7 +41,7 @@ const Product: React.FC = () => {
             subtitle: 'Fans Bonding Together',
             description: 'Fans komen samen, juichen samen en winnen samen! De perfecte teambuilding ervaring.',
             icon: Users,
-            color: '#3CB878', // brand green
+            color: '#A2E832', // brand green
             gradient: 'from-green-500/20 to-emerald-500/20'
         },
         {

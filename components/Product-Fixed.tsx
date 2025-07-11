@@ -32,7 +32,7 @@ const Product: React.FC = () => {
             subtitle: '100% Personal • LIVE Stadium',
             description: 'Visual: Floating phone with camera flash + stadium screen. Capture personal moments with stadium-wide impact.',
             icon: Camera,
-            color: '#3CB878', // brand green
+            color: '#A2E832', // brand green
             gradient: 'from-green-500/20 to-emerald-500/20'
         },
         {

@@ -3,27 +3,17 @@
 import { useEffect } from 'react'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import LogoScroller from '@/components/LogoScroller'
-import Product from '@/components/Product'
-import StadiumExperience from '@/components/StadiumExperience'
+import WhatHow from '@/components/WhatHow'
 import Cases from '@/components/Cases'
+import SpecificValue from '@/components/SpecificValue'
+import GameModes from '@/components/GameModes'
 import Ecosystem from '@/components/Ecosystem'
 import Contact from '@/components/Contact'
+import LogoScroller from '@/components/LogoScroller'
 import Footer from '@/components/Footer'
 
 export default function Home() {
   useEffect(() => {
-    // Spotlight effect
-    const handleMouseMove = (e: MouseEvent) => {
-      const spotlight = document.querySelector('.spotlight') as HTMLElement
-      if (spotlight) {
-        spotlight.style.setProperty('--mouse-x', e.clientX + 'px')
-        spotlight.style.setProperty('--mouse-y', e.clientY + 'px')
-      }
-    }
-
-    document.addEventListener('mousemove', handleMouseMove)
-
     // Scroll animations
     const observerOptions = {
       threshold: 0.1,
@@ -64,9 +54,8 @@ export default function Home() {
     window.addEventListener('hashchange', handleHashNavigation)
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove)
-      window.removeEventListener('hashchange', handleHashNavigation)
-      scrollElements.forEach(el => observer.unobserve(el))
+      window.removeEventListener('hashchange', handleHashNavigation);
+      scrollElements.forEach(el => observer.unobserve(el));
     }
   }, [])
 
@@ -74,13 +63,13 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
-      <LogoScroller />
-      <StadiumExperience />
+      <WhatHow />
       <Cases />
-      <Product />
+      <SpecificValue />
+      <GameModes />
       <Ecosystem />
-      {/* <ForWhom /> */}
       <Contact />
+      <LogoScroller />
       <Footer />
     </main>
   )

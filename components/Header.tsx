@@ -45,9 +45,10 @@ const Header: React.FC = () => {
             Fan of the <span className="lime-text">Match</span>
           </a>
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#product" onClick={handleScrollTo} className="text-main hover:lime-text transition">Product</a>
+            <a href="#what-how" onClick={handleScrollTo} className="text-main hover:lime-text transition">What & How</a>
+            <a href="#spelmodi" onClick={handleScrollTo} className="text-main hover:lime-text transition">Spelmodi</a>
             <a href="#cases" onClick={handleScrollTo} className="text-main hover:lime-text transition">Cases</a>
-            <a href="#contact" onClick={handleScrollTo} className="brand-button">Start de Conversatie</a>
+            <a href="#contact" onClick={handleScrollTo} className="brand-button">Start the Conversation</a>
           </nav>
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none">
@@ -58,10 +59,11 @@ const Header: React.FC = () => {
       </div>
       {/* Mobile Menu */}
       <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden border-t border-brand-border`}>
-        <a href="#product" onClick={handleScrollTo} className="block py-3 px-6 text-sm text-main hover:lime-text">Product</a>
+        <a href="#what-how" onClick={handleScrollTo} className="block py-3 px-6 text-sm text-main hover:lime-text">What & How</a>
+        <a href="#spelmodi" onClick={handleScrollTo} className="block py-3 px-6 text-sm text-main hover:lime-text">Spelmodi</a>
         <a href="#cases" onClick={handleScrollTo} className="block py-3 px-6 text-sm text-main hover:lime-text">Cases</a>
         <div className="p-4">
-          <a href="#contact" onClick={handleScrollTo} className="block brand-button text-center w-full">Start de Conversatie</a>
+          <a href="#contact" onClick={handleScrollTo} className="block brand-button text-center w-full">Start the Conversation</a>
         </div>
       </div>
     </header>

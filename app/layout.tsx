@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import ClientLayout from '@/components/ClientLayout'
 
 export const metadata: Metadata = {
   title: 'Final - Interactive Sports Platform',
@@ -22,8 +23,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <div className="spotlight"></div>
-        {children}
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   )

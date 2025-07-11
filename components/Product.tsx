@@ -12,7 +12,7 @@ const Product: React.FC = () => {
             subtitle: '100% Personal • LIVE Stadium',
             description: 'Capture unforgettable stadium moments from your fans\' perspective! Our FanCam transforms in-stadium interaction by making fans the stars themselves, using their own mobile devices. With a single tap, they can capture their unique moment and personalize it with custom filters in your club\'s style.',
             icon: Camera,
-            color: '#3CB878', // brand green
+            color: '#A2E832', // brand green
             gradient: 'from-green-500/20 to-emerald-500/20'
         },
         {

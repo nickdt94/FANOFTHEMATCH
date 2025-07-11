@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, Play, X } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const [showDemoModal, setShowDemoModal] = useState(false);
   const [status, setStatus] = useState({
     submitting: false,
     info: { error: false, msg: null as string | null }
@@ -50,62 +51,118 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black lime-text">Start de Conversatie</h2>
-          <p className="text-lg text-main mt-4 max-w-2xl mx-auto">We staan klaar om uw vragen te beantwoorden.</p>
+          <p className="text-lg text-main mt-4 max-w-2xl mx-auto">
+            Ontdek hoe Fan of the Match uw evenement kan transformeren. Kies de optie die het beste bij u past.
+          </p>
         </div>
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-start">
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold">Fan of the Match</h3>
-              <p className="text-inactive">part of LiveWall Group</p>
+
+        {/* Demo Options */}
+        <div className="max-w-3xl mx-auto mb-16">
+          <div className="bg-brand-card-bg border border-brand-border rounded-brand p-8 text-center hover:shadow-lg transition-all duration-300">
+            <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-6">
+              <Play className="w-8 h-8 text-white" />
             </div>
-            <div className="space-y-4 text-main">
-              <p className="flex items-start">
-                <MapPin className="w-5 h-5 mr-4 mt-1 lime-text flex-shrink-0" />
-                <span>Daws House, 33-35 Daws Lane<br />London NW7 4SD</span>
-              </p>
-              <p className="flex items-center">
-                <Phone className="w-5 h-5 mr-4 lime-text flex-shrink-0" />
-                <span>+31 (0) 13 7113708</span>
-              </p>
-              <p className="flex items-center">
-                <Mail className="w-5 h-5 mr-4 lime-text flex-shrink-0" />
-                <a href="mailto:info@livewall.co.uk" className="hover:lime-text transition-colors">info@livewall.co.uk</a>
-              </p>
-            </div>
-          </div>
-          <div className="bg-card-custom p-8">
-            <h3 className="text-2xl font-bold mb-6">Stuur ons een bericht</h3>
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-6"
+            <h3 className="text-xl font-bold text-white mb-4">Live Demo Aanvragen</h3>
+            <p className="text-brand-text mb-6">
+              Zie Fan of the Match in actie met een persoonlijke demo van 15 minuten. Perfect voor een eerste kennismaking.
+            </p>
+            <button 
+              onClick={() => setShowDemoModal(true)}
+              className="brand-button inline-block"
             >
-              <input type="hidden" name="_captcha" value="false" />
+              Plan een Demo
+            </button>
+          </div>
+        </div>
+        {/* Contact Information & Form */}
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold text-white mb-4">Of stuur ons direct een bericht</h3>
+            <p className="text-brand-text">We reageren binnen 24 uur op uw vragen.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+            <div className="space-y-8">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-main mb-2">Naam</label>
-                <input type="text" name="name" id="name" required className="form-input" placeholder="Uw naam"/>
+                <h3 className="text-2xl font-bold">Fan of the Match</h3>
+                <p className="text-inactive">part of LiveWall Group</p>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-main mb-2">E-mailadres</label>
-                <input type="email" name="email" id="email" required className="form-input" placeholder="Uw e-mailadres"/>
+              <div className="space-y-4 text-main">
+                <p className="flex items-start">
+                  <MapPin className="w-5 h-5 mr-4 mt-1 lime-text flex-shrink-0" />
+                  <span>Daws House, 33-35 Daws Lane<br />London NW7 4SD</span>
+                </p>
+                <p className="flex items-center">
+                  <Phone className="w-5 h-5 mr-4 lime-text flex-shrink-0" />
+                  <span>+31 (0) 13 7113708</span>
+                </p>
+                <p className="flex items-center">
+                  <Mail className="w-5 h-5 mr-4 lime-text flex-shrink-0" />
+                  <a href="mailto:info@livewall.co.uk" className="hover:lime-text transition-colors">info@livewall.co.uk</a>
+                </p>
               </div>
-              <div>
-                <label htmlFor="bericht" className="block text-sm font-medium text-main mb-2">Bericht</label>
-                <textarea name="bericht" id="bericht" rows={4} required className="form-input" placeholder="Stel hier uw vraag..."></textarea>
-              </div>
-              <div>
-                <button type="submit" disabled={status.submitting} className="w-full brand-button font-bold py-3 px-8 text-lg transition-opacity disabled:opacity-50 disabled:cursor-not-allowed">
-                  {status.submitting ? 'Bezig met verzenden...' : 'Verstuur'}
-                </button>
-              </div>
-              {status.info.msg && (
-                <div className={`mt-4 text-center text-sm font-medium ${status.info.error ? 'text-red-400' : 'lime-text'}`}>
-                  {status.info.msg}
+            </div>
+            <div className="bg-card-custom p-8">
+              <h3 className="text-2xl font-bold mb-6">Stuur ons een bericht</h3>
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
+                <input type="hidden" name="_captcha" value="false" />
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-main mb-2">Naam</label>
+                  <input type="text" name="name" id="name" required className="brand-input" placeholder="Uw naam"/>
                 </div>
-              )}
-            </form>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-main mb-2">E-mailadres</label>
+                  <input type="email" name="email" id="email" required className="brand-input" placeholder="Uw e-mailadres"/>
+                </div>
+                <div>
+                  <label htmlFor="bericht" className="block text-sm font-medium text-main mb-2">Bericht</label>
+                  <textarea name="bericht" id="bericht" rows={4} required className="brand-input" placeholder="Stel hier uw vraag..."></textarea>
+                </div>
+                <div>
+                  <button type="submit" disabled={status.submitting} className="w-full brand-button font-bold py-3 px-8 text-lg transition-opacity disabled:opacity-50 disabled:cursor-not-allowed">
+                    {status.submitting ? 'Bezig met verzenden...' : 'Verstuur'}
+                  </button>
+                </div>
+                {status.info.msg && (
+                  <div className={`mt-4 text-center text-sm font-medium ${status.info.error ? 'text-red-400' : 'lime-text'}`}>
+                    {status.info.msg}
+                  </div>
+                )}
+              </form>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Demo Modal */}
+      {showDemoModal && (
+        <div className="demo-modal-overlay" onClick={() => setShowDemoModal(false)}>
+          <div className="demo-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="demo-modal-close"
+              onClick={() => setShowDemoModal(false)}
+            >
+              <X size={24} />
+            </button>
+            <div className="demo-modal-header">
+              <h3>Book je Demo</h3>
+              <p>Ontdek hoe onze spelmodi jouw fan engagement transformeren</p>
+            </div>
+            <div className="demo-modal-iframe">
+              <iframe
+                src="https://cal.com/fanofthematch"
+                width="100%"
+                height="600"
+                frameBorder="0"
+                title="Book Demo"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
