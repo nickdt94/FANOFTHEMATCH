@@ -5,6 +5,8 @@ export interface CaseStudy {
     description: string;
     longDescription: string;
     url: string;
+    galleryImages?: string[];
+    videoUrl?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -14,7 +16,12 @@ export const caseStudies: CaseStudy[] = [
         title: "Fan of the Match at the UEFA 2024/2025 Finals",
         description: "At Fan of the Match, we know that the true spirit of football lies with its fans. In collaboration with UEFA, we captured the incredible enthusiasm of supporters during the exciting 2024/2025 UEFA Finals using our innovative FanCam technology across all three prestigious finals.",
         longDescription: "At Fan of the Match, we know that the true spirit of football lies with its fans. That's why, in collaboration with UEFA, we set out to capture the incredible enthusiasm of supporters during the exciting 2024/2025 UEFA Finals. Our goal was simple: empower fans to cheer on their teams and offer a unique look into their personal matchday experience. For all three prestigious finals—the Champions League Final in Munich, the Europa League Final in Bilbao, and the Conference League Final in Wroclaw—we deployed our innovative FanCam technology. Each FanCam was specifically designed to fit the unique atmosphere of its respective final, perfectly building the tension and excitement leading up to kick-off. Through the FanCam, we successfully highlighted how individual supporters embrace their unique fan journey, creating memorable content that truly showcases the magic of European club football. Beyond capturing captivating visuals, our solution also allows for valuable fan data collection, including opt-ins, providing crucial insights and opportunities for partners and sponsors.",
-        url: "https://www.livewall.nl/blogs/boosting-uefa-euro-2024-engagement-with-selfie-fancam-tool"
+        url: "https://www.livewall.nl/blogs/boosting-uefa-euro-2024-engagement-with-selfie-fancam-tool",
+        galleryImages: [
+            "/stadium/Euros1.jpg",
+            "/stadium/Euros2.webp"
+        ],
+        videoUrl: "https://youtu.be/a0aaE3OEqTM"
     },
     {
         image: "https://a.storyblok.com/f/174314/1080x1080/7c30f1349e/screen1.jpg/m/800x0/filters:format(webp):quality(80)",

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Play, X } from 'lucide-react';
 
 const Contact: React.FC = () => {
@@ -7,6 +7,38 @@ const Contact: React.FC = () => {
     submitting: false,
     info: { error: false, msg: null as string | null }
   });
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = (entry.target as HTMLElement).style.animationDelay || '0ms';
+          const delayValue = parseInt(delay.replace('ms', '')) || 0;
+          
+          setTimeout(() => {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+          }, delayValue);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with scroll-reveal class
+    const scrollElements = document.querySelectorAll('.scroll-reveal');
+    scrollElements.forEach(el => {
+      el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700', 'ease-out');
+      observer.observe(el);
+    });
+
+    return () => {
+      scrollElements.forEach(el => observer.unobserve(el));
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -49,61 +81,67 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-20 bg-brand-bg">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 scroll-reveal">
           <h2 className="text-4xl md:text-5xl font-black lime-text">Start de Conversatie</h2>
           <p className="text-lg text-main mt-4 max-w-2xl mx-auto">
             Ontdek hoe Fan of the Match uw evenement kan transformeren. Kies de optie die het beste bij u past.
           </p>
         </div>
 
-        {/* Demo Options */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <div className="bg-brand-card-bg border border-brand-border rounded-brand p-8 text-center hover:shadow-lg transition-all duration-300">
-            <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-6">
-              <Play className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-4">Live Demo Aanvragen</h3>
-            <p className="text-brand-text mb-6">
-              Zie Fan of the Match in actie met een persoonlijke demo van 15 minuten. Perfect voor een eerste kennismaking.
-            </p>
-            <button 
-              onClick={() => setShowDemoModal(true)}
-              className="brand-button inline-block"
-            >
-              Plan een Demo
-            </button>
-          </div>
-        </div>
-        {/* Contact Information & Form */}
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-white mb-4">Of stuur ons direct een bericht</h3>
-            <p className="text-brand-text">We reageren binnen 24 uur op uw vragen.</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold">Fan of the Match</h3>
-                <p className="text-inactive">part of LiveWall Group</p>
-              </div>
-              <div className="space-y-4 text-main">
-                <p className="flex items-start">
-                  <MapPin className="w-5 h-5 mr-4 mt-1 lime-text flex-shrink-0" />
-                  <span>Daws House, 33-35 Daws Lane<br />London NW7 4SD</span>
-                </p>
-                <p className="flex items-center">
-                  <Phone className="w-5 h-5 mr-4 lime-text flex-shrink-0" />
-                  <span>+31 (0) 13 7113708</span>
-                </p>
-                <p className="flex items-center">
-                  <Mail className="w-5 h-5 mr-4 lime-text flex-shrink-0" />
-                  <a href="mailto:info@livewall.co.uk" className="hover:lime-text transition-colors">info@livewall.co.uk</a>
+        {/* Demo and Contact Forms Side by Side */}
+        <div className="max-w-6xl mx-auto mb-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            
+            {/* Demo Section */}
+            <div className="bg-card-custom p-8 scroll-reveal hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
+                  <Play className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Live Demo Aanvragen</h3>
+                <p className="text-brand-text mb-6">
+                  Zie Fan of the Match in actie met een persoonlijke demo van 15 minuten. Perfect voor een eerste kennismaking.
                 </p>
               </div>
+              
+              <div className="text-center">
+                <button 
+                  onClick={() => setShowDemoModal(true)}
+                  className="brand-button w-full justify-center hover:scale-105 transition-transform duration-200"
+                >
+                  Plan een Demo
+                </button>
+              </div>
+              
+              {/* Contact Information onder demo */}
+              <div className="mt-8 pt-8 border-t border-brand-border">
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <h4 className="text-xl font-bold text-white">Fan of the Match</h4>
+                    <p className="text-inactive">part of LiveWall Group</p>
+                  </div>
+                  <div className="space-y-3 text-main text-center">
+                    <p className="flex items-center justify-center">
+                      <MapPin className="w-4 h-4 mr-3 lime-text flex-shrink-0" />
+                      <span className="text-sm">Daws House, 33-35 Daws Lane, London NW7 4SD</span>
+                    </p>
+                    <p className="flex items-center justify-center">
+                      <Phone className="w-4 h-4 mr-3 lime-text flex-shrink-0" />
+                      <span className="text-sm">+31 (0) 13 7113708</span>
+                    </p>
+                    <p className="flex items-center justify-center">
+                      <Mail className="w-4 h-4 mr-3 lime-text flex-shrink-0" />
+                      <a href="mailto:info@livewall.co.uk" className="hover:lime-text transition-colors text-sm">info@livewall.co.uk</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="bg-card-custom p-8">
+
+            {/* Contact Form */}
+            <div className="bg-card-custom p-8 scroll-reveal hover:shadow-xl hover:scale-[1.02] transition-all duration-300" style={{ animationDelay: '200ms' }}>
               <h3 className="text-2xl font-bold mb-6">Stuur ons een bericht</h3>
+              <p className="text-brand-text mb-6">We reageren binnen 24 uur op uw vragen.</p>
               <form
                 onSubmit={handleSubmit}
                 className="space-y-6"
@@ -111,18 +149,18 @@ const Contact: React.FC = () => {
                 <input type="hidden" name="_captcha" value="false" />
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-main mb-2">Naam</label>
-                  <input type="text" name="name" id="name" required className="brand-input" placeholder="Uw naam"/>
+                  <input type="text" name="name" id="name" required className="brand-input hover:border-brand-primary transition-colors duration-200" placeholder="Uw naam"/>
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-main mb-2">E-mailadres</label>
-                  <input type="email" name="email" id="email" required className="brand-input" placeholder="Uw e-mailadres"/>
+                  <input type="email" name="email" id="email" required className="brand-input hover:border-brand-primary transition-colors duration-200" placeholder="Uw e-mailadres"/>
                 </div>
                 <div>
                   <label htmlFor="bericht" className="block text-sm font-medium text-main mb-2">Bericht</label>
-                  <textarea name="bericht" id="bericht" rows={4} required className="brand-input" placeholder="Stel hier uw vraag..."></textarea>
+                  <textarea name="bericht" id="bericht" rows={4} required className="brand-input hover:border-brand-primary transition-colors duration-200" placeholder="Stel hier uw vraag..."></textarea>
                 </div>
                 <div>
-                  <button type="submit" disabled={status.submitting} className="w-full brand-button font-bold py-3 px-8 text-lg transition-opacity disabled:opacity-50 disabled:cursor-not-allowed">
+                  <button type="submit" disabled={status.submitting} className="w-full brand-button font-bold py-3 px-8 text-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100">
                     {status.submitting ? 'Bezig met verzenden...' : 'Verstuur'}
                   </button>
                 </div>

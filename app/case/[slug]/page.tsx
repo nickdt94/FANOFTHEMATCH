@@ -6,8 +6,28 @@ import Link from 'next/link'
 import { caseStudies, createSlug } from '@/data/cases'
 import Spotlight from '@/components/Spotlight'
 
-// Enhanced case data with additional images and metrics
+// Enhanced case
 const enhancedCaseData = {
+    'uefa-fan-of-the-match-at-the-uefa-2024-2025-finals': {
+        ...caseStudies.find(c => c.category === 'UEFA'),
+        heroImage: "https://images.ctfassets.net/ryywav90yxrs/4VDaCvbATIPSY3Q5kPjXYL/38aae3b8677b2891ade1d70769ecdced/header.png",
+        additionalImages: [
+            "/stadium/Euros1.jpg",
+            "/stadium/Euros2.webp",
+            "https://images.ctfassets.net/ryywav90yxrs/4VDaCvbATIPSY3Q5kPjXYL/38aae3b8677b2891ade1d70769ecdced/header.png"
+        ],
+        videoUrl: "https://youtu.be/a0aaE3OEqTM",
+        metrics: [
+            { icon: Users, value: "3", label: "UEFA Finals" },
+            { icon: Target, value: "100K+", label: "Fans Engaged" },
+            { icon: TrendingUp, value: "95%", label: "Participation Rate" }
+        ],
+        challenge: "At Fan of the Match, we know that the true spirit of football lies with its fans. That's why, in collaboration with UEFA, we set out to capture the incredible enthusiasm of supporters during the exciting 2024/2025 UEFA Finals. Our goal was simple: empower fans to cheer on their teams and offer a unique look into their personal matchday experience.",
+        solution: "For all three prestigious finals—the Champions League Final in Munich, the Europa League Final in Bilbao, and the Conference League Final in Wroclaw—we deployed our innovative FanCam technology. Each FanCam was specifically designed to fit the unique atmosphere of its respective final, perfectly building the tension and excitement leading up to kick-off.",
+        results: "Through the FanCam, we successfully highlighted how individual supporters embrace their unique fan journey, creating memorable content that truly showcases the magic of European club football.",
+        impact: "Beyond capturing captivating visuals, our solution also allows for valuable fan data collection, including opt-ins, providing crucial insights and opportunities for partners and sponsors.",
+        recognition: "Discover how our cutting-edge solutions can boost engagement, enhance the fan experience, and provide valuable data for your organization."
+    },
     'manchester-city-interactive-in-stadium-quiz': {
         ...caseStudies[0],
         heroImage: "https://a.storyblok.com/f/174314/1080x1080/7c30f1349e/screen1.jpg/m/1400x0/filters:format(webp):quality(80)",
@@ -175,11 +195,11 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
             </header>
 
             {/* Hero Section */}
-            <section className="pt-20 pb-16 overflow-hidden">
+            <section className="pt-20 pb-12 overflow-hidden">
                 <div className="container mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center mb-16">
+                    <div className="max-w-4xl mx-auto text-center mb-12">
                         <p className="lime-text font-bold text-lg mb-4">{caseData.category}</p>
-                        <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
                             {caseData.title}
                         </h1>
                         <p className="text-xl text-main max-w-3xl mx-auto mb-8">
@@ -190,7 +210,7 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
             </section>
 
             {/* Hero Image */}
-            <section className="mb-20">
+            <section className="mb-16">
                 <div className="container mx-auto px-6">
                     <div className="max-w-6xl mx-auto">
                         <div className="relative aspect-[16/9] rounded-2xl overflow-hidden">
@@ -206,19 +226,19 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
             </section>
 
             {/* Metrics */}
-            <section className="mb-20">
+            <section className="mb-16">
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl mx-auto">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {caseData.metrics.map((metric, index) => (
                                 <div key={index} className="text-center">
-                                    <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-4">
-                                        <metric.icon className="w-8 h-8 text-brand-primary" />
+                                    <div className="inline-flex items-center justify-center w-14 h-14 bg-brand-primary/20 rounded-full mb-3">
+                                        <metric.icon className="w-7 h-7 text-brand-primary" />
                                     </div>
-                                    <div className="text-3xl font-black text-brand-text-heading mb-2">
+                                    <div className="text-2xl font-black text-brand-text-heading mb-1">
                                         {metric.value}
                                     </div>
-                                    <div className="text-inactive">
+                                    <div className="text-inactive text-sm">
                                         {metric.label}
                                     </div>
                                 </div>
@@ -229,10 +249,10 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
             </section>
 
             {/* Project Overview */}
-            <section className="mb-20">
+            <section className="mb-16">
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-black mb-8">PROJECT OVERVIEW</h2>
+                        <h2 className="text-2xl md:text-3xl font-black mb-6">PROJECT OVERVIEW</h2>
                         <div className="prose prose-lg max-w-none">
                             <p className="text-main text-lg leading-relaxed">
                                 {caseData.challenge}
@@ -242,32 +262,81 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
                 </div>
             </section>
 
-            {/* Additional Images Grid */}
-            <section className="mb-20">
-                <div className="container mx-auto px-6">
-                    <div className="max-w-6xl mx-auto">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {caseData.additionalImages.map((image, index) => (
-                                <div key={index} className="aspect-square rounded-2xl overflow-hidden">
-                                    <img 
-                                        src={image} 
-                                        alt={`${caseData.title} - Image ${index + 1}`}
-                                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                                    />
+            {/* Video Section - Only show if videoUrl exists */}
+            {caseData.videoUrl && (
+                <section className="mb-16">
+                    <div className="container mx-auto px-6">
+                        <div className="max-w-6xl mx-auto">
+                            <div className="flex flex-col lg:flex-row gap-8 items-center justify-center">
+                                {/* Video Content */}
+                                <div className="flex-shrink-0">
+                                    <div className="relative aspect-[9/16] w-80 mx-auto rounded-xl overflow-hidden bg-black">
+                                        <iframe
+                                            src={`${caseData.videoUrl.replace('youtu.be/', 'www.youtube.com/embed/').replace('watch?v=', 'embed/')}?controls=0&modestbranding=1&rel=0&showinfo=0&autoplay=1&loop=1&mute=1&playlist=${caseData.videoUrl.split('/').pop()?.split('?')[0]}`}
+                                            title={`${caseData.title} - Behind the Scenes`}
+                                            className="w-full h-full"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                        />
+                                    </div>
                                 </div>
-                            ))}
+                                
+                                {/* Cover Images */}
+                                <div className="flex-shrink-0">
+                                    <div className="grid grid-cols-1 gap-4 max-w-sm mx-auto">
+                                        <div className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
+                                            <img 
+                                                src="/stadium/Euros1.jpg" 
+                                                alt="UEFA Champions League Final - Munich"
+                                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                            />
+                                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <h3 className="font-bold text-sm">Munich</h3>
+                                                <p className="text-xs">Champions League Final</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
+                                            <img 
+                                                src="/stadium/Euros2.webp" 
+                                                alt="UEFA Europa League Final - Bilbao"
+                                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                            />
+                                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <h3 className="font-bold text-sm">Bilbao</h3>
+                                                <p className="text-xs">Europa League Final</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
+                                            <img 
+                                                src="/stadium/Euros1.jpg" 
+                                                alt="UEFA Conference League Final - Wroclaw"
+                                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                            />
+                                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <h3 className="font-bold text-sm">Wroclaw</h3>
+                                                <p className="text-xs">Conference League Final</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            )}
 
             {/* BIG IDEA */}
-            <section className="mb-20">
+            <section className="mb-16">
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-black mb-8">BIG IDEA</h2>
+                        <h2 className="text-2xl md:text-3xl font-black mb-6">THROUGH THE FANCAM</h2>
                         <div className="prose prose-lg max-w-none">
-                            <p className="text-main text-lg leading-relaxed mb-6">
+                            <p className="text-main text-lg leading-relaxed mb-4">
                                 {caseData.solution}
                             </p>
                             <p className="text-main text-lg leading-relaxed">
@@ -279,10 +348,10 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
             </section>
 
             {/* Large Feature Image */}
-            <section className="mb-20">
+            <section className="mb-16">
                 <div className="container mx-auto px-6">
                     <div className="max-w-6xl mx-auto">
-                        <div className="relative aspect-[21/9] rounded-2xl overflow-hidden">
+                        <div className="relative aspect-[21/9] rounded-xl overflow-hidden">
                             <img 
                                 src={caseData.image} 
                                 alt={`${caseData.title} - Feature`}
@@ -295,18 +364,18 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
             </section>
 
             {/* Impact & Recognition */}
-            <section className="mb-20">
+            <section className="mb-16">
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl mx-auto">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             <div>
-                                <h3 className="text-2xl font-black mb-6">Entertaining your fans</h3>
+                                <h3 className="text-xl font-black mb-4">Entertaining your fans</h3>
                                 <p className="text-main leading-relaxed">
                                     {caseData.impact}
                                 </p>
                             </div>
                             <div>
-                                <h3 className="text-2xl font-black mb-6">Branded content</h3>
+                                <h3 className="text-xl font-black mb-4">Branded content</h3>
                                 <p className="text-main leading-relaxed">
                                     {caseData.recognition}
                                 </p>
@@ -317,14 +386,14 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
             </section>
 
             {/* Call to Action */}
-            <section className="pb-20">
+            <section className="pb-16">
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl mx-auto text-center">
-                        <div className="bg-card-custom rounded-3xl p-12">
-                            <h2 className="text-3xl font-black mb-6">
+                        <div className="bg-card-custom rounded-2xl p-8">
+                            <h2 className="text-2xl md:text-3xl font-black mb-4">
                                 Klaar om je eigen verhaal te schrijven?
                             </h2>
-                            <p className="text-main text-lg mb-8">
+                            <p className="text-main text-lg mb-6">
                                 Laat ons je helpen een even krachtige ervaring te creëren voor jouw merk.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
