@@ -2404,16 +2404,18 @@ h1, h2, h3, h4, h5, h6 {
 .cases-grid {
     display: flex;
     overflow-x: auto;
-    overflow-y: hidden; /* Prevent vertical scrolling */
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 1.5rem;
     padding-bottom: 1rem; /* Space for shadows/scrollbar */
     scrollbar-width: none; /* Firefox */
-    cursor: grab;
     user-select: none;
-    overscroll-behavior-x: contain; /* Prevent overscroll effects */
-    overscroll-behavior-y: none; /* Prevent vertical overscroll */
+}
+
+/* Case cards should not interfere with page scrolling */
+.case-card {
+    pointer-events: auto;
+    cursor: pointer;
 }
 .cases-grid.grabbing {
     cursor: grabbing;

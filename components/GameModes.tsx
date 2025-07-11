@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Camera, HelpCircle, Sparkles } from 'lucide-react';
+import InteractiveQuiz from './InteractiveQuiz';
 
 const GameModes: React.FC = () => {
   const [activeTab, setActiveTab] = useState('fancam');
@@ -193,6 +194,11 @@ const GameModes: React.FC = () => {
                         Your browser does not support the video tag.
                       </video>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-brand"></div>
+                    </div>
+                  ) : activeGameMode.id === 'quiz' ? (
+                    // Interactive Quiz for Quiz
+                    <div className="flex justify-center">
+                      <InteractiveQuiz />
                     </div>
                   ) : (
                     // Single Image for other tabs

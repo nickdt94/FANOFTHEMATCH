@@ -7,20 +7,13 @@ import { caseStudies, createSlug, type CaseStudy } from '../data/cases';
 export type { CaseStudy };
 
 // Internal CaseCard component to simplify ref handling.
-const CaseCard = ({ study, delay, isDragging }: { study: CaseStudy, delay: string, isDragging: boolean }) => {
+const CaseCard = ({ study, delay }: { study: CaseStudy, delay: string }) => {
     const [ref, isVisible] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1 });
     const slug = createSlug(study.title, study.category);
 
-    const handleClick = (e: React.MouseEvent) => {
-        if (isDragging) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-    };
-
     return (
         <div ref={ref} className={`h-full scroll-animate ${delay} ${isVisible ? 'is-visible' : ''}`}>
-            <Link href={`/case/${slug}`} className="block h-full" onClick={handleClick}>
+            <Link href={`/case/${slug}`} className="block h-full">
                 <div className="h-full case-card bg-card-custom cursor-pointer flex flex-col overflow-hidden">
                     <div className="link-icon">
                         <ArrowUpRight className="w-5 h-5" />
@@ -57,8 +50,6 @@ const Cases: React.FC = () => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const itemRefs = useRef<(HTMLDivElement | null)[]>([]); // To hold refs to each card wrapper
     const [activeIndex, setActiveIndex] = useState(0);
-    const [isDragging, setIsDragging] = useState(false);
-    const isDraggingRef = useRef(false);
 
     const handleDotClick = (index: number) => {
         itemRefs.current[index]?.scrollIntoView({
@@ -71,77 +62,6 @@ const Cases: React.FC = () => {
     useEffect(() => {
         const container = scrollContainerRef.current;
         if (!container) return;
-        
-        let isDown = false;
-        let startX: number;
-        let scrollLeft: number;
-        let startY: number;
-
-        const onMouseDown = (e: MouseEvent) => {
-            isDown = true;
-            isDraggingRef.current = false; // Reset on new mousedown
-            setIsDragging(false);
-            container.classList.add('grabbing');
-            startX = e.pageX - container.offsetLeft;
-            startY = e.pageY - container.offsetTop;
-            scrollLeft = container.scrollLeft;
-        };
-
-        const onMouseLeave = () => { 
-            isDown = false; 
-            setIsDragging(false);
-            isDraggingRef.current = false;
-            container.classList.remove('grabbing'); 
-        };
-        
-        const onMouseUp = () => { 
-            isDown = false; 
-            container.classList.remove('grabbing');
-            // Keep isDragging true for a short moment to prevent clicks
-            setTimeout(() => {
-                setIsDragging(false);
-                isDraggingRef.current = false;
-            }, 100);
-        };
-        
-        const onMouseMove = (e: MouseEvent) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - container.offsetLeft;
-            const y = e.pageY - container.offsetTop;
-            const walkX = x - startX;
-            const walkY = y - startY;
-            
-            // Only scroll horizontally if the movement is primarily horizontal
-            if (Math.abs(walkX) > Math.abs(walkY)) {
-                // If the mouse has moved more than a certain threshold, it's a drag
-                if (Math.abs(walkX) > 5) { 
-                    isDraggingRef.current = true;
-                    setIsDragging(true);
-                }
-                container.scrollLeft = scrollLeft - walkX * 1.5;
-            }
-        };
-
-        // Prevent vertical scrolling within the container
-        const onWheel = (e: WheelEvent) => {
-            // Only allow horizontal scrolling
-            if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-                // Horizontal scroll
-                e.preventDefault();
-                container.scrollLeft += e.deltaX;
-            } else if (e.deltaY !== 0) {
-                // Vertical scroll - prevent it within this container
-                e.preventDefault();
-                container.scrollLeft += e.deltaY;
-            }
-        };
-
-        container.addEventListener('mousedown', onMouseDown);
-        container.addEventListener('mouseleave', onMouseLeave);
-        container.addEventListener('mouseup', onMouseUp);
-        container.addEventListener('mousemove', onMouseMove);
-        container.addEventListener('wheel', onWheel, { passive: false });
         
         const handleScroll = () => {
             const containerCenter = container.scrollLeft + container.clientWidth / 2;
@@ -173,11 +93,6 @@ const Cases: React.FC = () => {
 
         return () => {
             if (container) {
-                container.removeEventListener('mousedown', onMouseDown);
-                container.removeEventListener('mouseleave', onMouseLeave);
-                container.removeEventListener('mouseup', onMouseUp);
-                container.removeEventListener('mousemove', onMouseMove);
-                container.removeEventListener('wheel', onWheel);
                 container.removeEventListener('scroll', throttledScrollHandler);
             }
             clearTimeout(scrollTimeout);
@@ -199,7 +114,6 @@ const Cases: React.FC = () => {
                             <CaseCard 
                                 study={study} 
                                 delay={`delay-${(index % 3) * 100}`}
-                                isDragging={isDragging}
                             />
                         </div>
                     ))}
