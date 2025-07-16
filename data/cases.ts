@@ -11,6 +11,21 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
     {
+        image: "/stadium/Shorttrack Rotterdam -3.jpg",
+        category: "Odido & ISU",
+        title: "Personalized Fan Support",
+        description: "Through a special 'Toon je support' portal, fans could easily submit personal messages of good luck, creating a direct voice between fans and athletes during the ISU World Short Track Championships 2024 in Rotterdam Ahoy.",
+        longDescription: "During the ISU World Short Track Championships 2024 in Rotterdam Ahoy, Odido, as the presenting partner, aimed to strengthen the connection between fans and athletes. In collaboration with House of Sports, we developed a campaign that gave fans a direct voice. Through a special 'Toon je support' (Show Your Support) portal, fans could easily submit personal messages of good luck, optionally accompanied by a photo. These heartfelt messages then found their way live onto the ContentWall, which was displayed on screens in both the athletes' lounge and the catacomb tunnel leading to the short track rink, and was also prominently visible on the large screens in the stadium. This campaign not only enhanced fan engagement but also activated Odido's brand in an authentic and effective way by forging a deep, personal connection between supporters and their heroes.",
+        url: "https://www.fanofthematch.com/cases/odido-isu-short-track-championships",
+        galleryImages: [
+            "/stadium/Shorttrack Rotterdam -3.jpg",
+            "/stadium/Shorttrack Rotterdam -6.jpg",
+            "/stadium/Shorttrack Rotterdam -9.jpg",
+            "/stadium/Contentwall 1.png",
+            "/stadium/Contentwall 2.png"
+        ]
+    },
+    {
         image: "https://images.ctfassets.net/ryywav90yxrs/4VDaCvbATIPSY3Q5kPjXYL/38aae3b8677b2891ade1d70769ecdced/header.png",
         category: "UEFA",
         title: "Fan of the Match at the UEFA 2024/2025 Finals",

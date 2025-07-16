@@ -8,6 +8,30 @@ import Spotlight from '@/components/Spotlight'
 
 // Enhanced case
 const enhancedCaseData = {
+    'odido-isu-personalized-fan-support': {
+        ...caseStudies.find(c => c.category === 'Odido & ISU'),
+        title: "The power of personalized fan support",
+        category: "Odido & ISU World Short Track Championships 2024",
+        description: "Through a special 'Toon je support' portal, fans could easily submit personal messages of good luck, creating a direct voice between fans and athletes during the ISU World Short Track Championships 2024 in Rotterdam Ahoy.",
+        image: "/stadium/Shorttrack Rotterdam -1.jpg",
+        heroImage: "/stadium/Shorttrack Rotterdam -2.jpg",
+        additionalImages: [
+            "/stadium/Shorttrack Rotterdam -3.jpg",
+            "/stadium/Shorttrack Rotterdam -9.jpg",
+            "/stadium/Shorttrack Rotterdam -6.jpg"
+        ],
+        videoUrl: undefined, // No video for this case
+        metrics: [
+            { icon: Users, value: "2500+", label: "Fan Messages" },
+            { icon: Target, value: "90%", label: "Athlete Reach" },
+            { icon: TrendingUp, value: "250%", label: "Fan Engagement" }
+        ],
+        challenge: "During the ISU World Short Track Championships 2024 in Rotterdam Ahoy, Odido, as the presenting partner, aimed to strengthen the connection between fans and athletes. The challenge was to create an authentic way for fans to directly support their heroes while effectively activating Odido's brand presence.",
+        solution: "In collaboration with House of Sports, we developed a campaign that gave fans a direct voice through a special 'Toon je support' (Show Your Support) portal. Fans could easily submit personal messages of good luck, optionally accompanied by a photo, creating a meaningful connection between supporters and athletes.",
+        results: "These heartfelt messages found their way live onto the ContentWall, which was displayed on screens in both the athletes' lounge and the catacomb tunnel leading to the short track rink, and was also prominently visible on the large screens in the stadium.",
+        impact: "This campaign not only enhanced fan engagement but also activated Odido's brand in an authentic and effective way by forging a deep, personal connection between supporters and their heroes.",
+        recognition: "The personalized fan support system set a new standard for authentic brand activation in sports, demonstrating how technology can create meaningful connections between fans and athletes at major sporting events."
+    },
     'uefa-fan-of-the-match-at-the-uefa-2024-2025-finals': {
         ...caseStudies.find(c => c.category === 'UEFA'),
         heroImage: "https://images.ctfassets.net/ryywav90yxrs/4VDaCvbATIPSY3Q5kPjXYL/38aae3b8677b2891ade1d70769ecdced/header.png",
@@ -322,6 +346,56 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
                                                 <p className="text-xs">Conference League Final</p>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Images Section - Only show if no video but has additional images */}
+            {!caseData.videoUrl && caseData.additionalImages && (
+                <section className="mb-16">
+                    <div className="container mx-auto px-6">
+                        <div className="max-w-4xl mx-auto">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
+                                    <img 
+                                        src={caseData.additionalImages[0]} 
+                                        alt="ContentWall - Athletes Lounge"
+                                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <h3 className="font-bold text-sm">Athletes Lounge</h3>
+                                        <p className="text-xs">ContentWall Display</p>
+                                    </div>
+                                </div>
+                                
+                                <div className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
+                                    <img 
+                                        src={caseData.additionalImages[1]} 
+                                        alt="ContentWall - Stadium Screens"
+                                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <h3 className="font-bold text-sm">Stadium Screens</h3>
+                                        <p className="text-xs">ContentWall Display</p>
+                                    </div>
+                                </div>
+                                
+                                <div className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
+                                    <img 
+                                        src={caseData.additionalImages[2]} 
+                                        alt="Short Track Racing - Rotterdam Ahoy"
+                                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <h3 className="font-bold text-sm">Rotterdam Ahoy</h3>
+                                        <p className="text-xs">Short Track Championship</p>
                                     </div>
                                 </div>
                             </div>
