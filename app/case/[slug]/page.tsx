@@ -1,5 +1,3 @@
-'use client'
-
 import { notFound } from 'next/navigation'
 import { ArrowLeft, Users, Target, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
@@ -236,7 +234,7 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
             {/* Hero Image */}
             <section className="mb-16">
                 <div className="container mx-auto px-6">
-                    <div className="max-w-6xl mx-auto">
+                    <div className="max-w-4xl mx-auto">
                         <div className="relative aspect-[16/9] rounded-2xl overflow-hidden">
                             <img 
                                 src={caseData.heroImage} 
@@ -424,7 +422,7 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
             {/* Large Feature Image */}
             <section className="mb-16">
                 <div className="container mx-auto px-6">
-                    <div className="max-w-6xl mx-auto">
+                    <div className="max-w-4xl mx-auto">
                         <div className="relative aspect-[21/9] rounded-xl overflow-hidden">
                             <img 
                                 src={caseData.image} 
