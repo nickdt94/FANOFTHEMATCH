@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Phone, Mail, Play, X } from 'lucide-react';
+import { Mail, Play, X } from 'lucide-react';
 import HubspotFormWrapper from './HubspotFormWrapper';
 
 const Contact: React.FC = () => {
   const [showDemoModal, setShowDemoModal] = useState(false);
-  const [status, setStatus] = useState({
-    submitting: false,
-    info: { error: false, msg: null as string | null }
-  });
 
   useEffect(() => {
     const observerOptions = {
@@ -41,43 +37,7 @@ const Contact: React.FC = () => {
     };
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus({ submitting: true, info: { error: false, msg: null } });
-
-    const form = e.target as HTMLFormElement;
-    const data = new FormData(form);
-
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/koenverhoof@livewallgroup.com', {
-        method: 'POST',
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        },
-      });
-
-      const json = await response.json();
-      
-      if (response.ok && json.success === 'true') {
-        setStatus({
-          submitting: false,
-          info: { error: false, msg: "Bedankt! Uw bericht is verzonden." }
-        });
-        form.reset();
-      } else {
-        setStatus({
-          submitting: false,
-          info: { error: true, msg: json.message || "Er is iets misgegaan. Probeer het opnieuw." }
-        });
-      }
-    } catch {
-      setStatus({
-        submitting: false,
-        info: { error: true, msg: "Serverfout. Controleer uw verbinding en probeer het opnieuw." }
-      });
-    }
-  };
+  // ...existing code...
 
   return (
     <section id="contact" className="py-20 bg-brand-bg">
