@@ -67,9 +67,8 @@ export default function Home() {
       <Cases />
       <SpecificValue />
       <GameModes />
-      <Ecosystem />
+       <LogoScroller />
       <Contact />
-      <LogoScroller />
       <Footer />
     </main>
   )

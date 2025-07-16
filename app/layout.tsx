@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import ClientLayout from '@/components/ClientLayout'
+import { GoogleTagManager } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: 'Final - Interactive Sports Platform',
@@ -23,6 +24,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <GoogleTagManager gtmId="GTM-WJ83RLFN" />
         <ClientLayout>
           {children}
         </ClientLayout>

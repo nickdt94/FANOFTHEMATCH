@@ -40,13 +40,13 @@ const enhancedCaseData = {
         ],
         videoUrl: "https://youtu.be/a0aaE3OEqTM",
         metrics: [
-            { icon: Users, value: "3", label: "UEFA Finals" },
+            { icon: Users, value: "40628", label: "Fan posts" },
             { icon: Target, value: "100K+", label: "Fans Engaged" },
-            { icon: TrendingUp, value: "95%", label: "Participation Rate" }
+            { icon: TrendingUp, value: "240441", label: "Participants" }
         ],
-        challenge: "At Fan of the Match, we know that the true spirit of football lies with its fans. That's why, in collaboration with UEFA, we set out to capture the incredible enthusiasm of supporters during the exciting 2024/2025 UEFA Finals. Our goal was simple: empower fans to cheer on their teams and offer a unique look into their personal matchday experience.",
-        solution: "For all three prestigious finals—the Champions League Final in Munich, the Europa League Final in Bilbao, and the Conference League Final in Wroclaw—we deployed our innovative FanCam technology. Each FanCam was specifically designed to fit the unique atmosphere of its respective final, perfectly building the tension and excitement leading up to kick-off.",
-        results: "Through the FanCam, we successfully highlighted how individual supporters embrace their unique fan journey, creating memorable content that truly showcases the magic of European club football.",
+        challenge: "Through our innovative platform, driven by the FanCam and ContentWall (fan posts), we successfully captured the pulse of the tournament. These tools transformed passive viewers into active participants across all stages, from the intense Group Phase to the climactic Final.",
+        solution: "<strong>240,441 Unique Participants:</strong> We connected with a massive audience, engaging over a quarter-million unique fans who actively participated with their teams and the tournament through our interactive features.",
+        results: "<strong>40,628 Fan Posts Generated:</strong> The excitement translated directly into user-generated content, with fans contributing an astounding 40,628 unique posts to the ContentWall, showcasing their personal experiences and amplifying the tournament's reach.",
         impact: "Beyond capturing captivating visuals, our solution also allows for valuable fan data collection, including opt-ins, providing crucial insights and opportunities for partners and sponsors.",
         recognition: "Discover how our cutting-edge solutions can boost engagement, enhance the fan experience, and provide valuable data for your organization."
     },
@@ -289,10 +289,10 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
                 <section className="mb-16">
                     <div className="container mx-auto px-6">
                         <div className="max-w-6xl mx-auto">
-                            <div className="flex flex-col lg:flex-row gap-8 items-center justify-center">
+                            <div className="flex flex-col lg:flex-row gap-10 items-start justify-center">
                                 {/* Video Content */}
                                 <div className="flex-shrink-0">
-                                    <div className="relative aspect-[9/16] w-80 mx-auto rounded-xl overflow-hidden bg-black">
+                                    <div className="relative aspect-[9/16] w-80 rounded-xl overflow-hidden bg-black">
                                         <iframe
                                             src={`${caseData.videoUrl.replace('youtu.be/', 'www.youtube.com/embed/').replace('watch?v=', 'embed/')}?controls=0&modestbranding=1&rel=0&showinfo=0&autoplay=1&loop=1&mute=1&playlist=${caseData.videoUrl.split('/').pop()?.split('?')[0]}`}
                                             title={`${caseData.title} - Behind the Scenes`}
@@ -305,7 +305,7 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
                                 
                                 {/* Cover Images */}
                                 <div className="flex-shrink-0">
-                                    <div className="grid grid-cols-1 gap-4 max-w-sm mx-auto">
+                                    <div className="grid grid-cols-1 gap-4 w-80">
                                         <div className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
                                             <img 
                                                 src="/stadium/Euros1.jpg" 
@@ -408,12 +408,14 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-2xl md:text-3xl font-black mb-6">THROUGH THE FANCAM</h2>
                         <div className="prose prose-lg max-w-none">
-                            <p className="text-main text-lg leading-relaxed mb-4">
-                                {caseData.solution}
-                            </p>
-                            <p className="text-main text-lg leading-relaxed">
-                                {caseData.results}
-                            </p>
+                            <p 
+                                className="text-main text-lg leading-relaxed mb-4"
+                                dangerouslySetInnerHTML={{ __html: caseData.solution }}
+                            />
+                            <p 
+                                className="text-main text-lg leading-relaxed"
+                                dangerouslySetInnerHTML={{ __html: caseData.results }}
+                            />
                         </div>
                     </div>
                 </div>

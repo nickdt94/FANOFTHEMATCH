@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Play, X } from 'lucide-react';
+import HubspotFormWrapper from './HubspotFormWrapper';
 
 const Contact: React.FC = () => {
   const [showDemoModal, setShowDemoModal] = useState(false);
@@ -48,7 +49,7 @@ const Contact: React.FC = () => {
     const data = new FormData(form);
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/info@livewall.co.uk', {
+      const response = await fetch('https://formsubmit.co/ajax/koenverhoof@livewallgroup.com', {
         method: 'POST',
         body: data,
         headers: {
@@ -81,99 +82,68 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-20 bg-brand-bg">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-5xl font-black lime-text">Start de Conversatie</h2>
-          <p className="text-lg text-main mt-4 max-w-2xl mx-auto">
-            Ontdek hoe Fan of the Match uw evenement kan transformeren. Kies de optie die het beste bij u past.
-          </p>
-        </div>
+
+
 
         {/* Demo and Contact Forms Side by Side */}
         <div className="max-w-6xl mx-auto mb-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            
-            {/* Demo Section */}
-            <div className="bg-card-custom p-8 scroll-reveal hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-              <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
-                  <Play className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Live Demo Aanvragen</h3>
-                <p className="text-brand-text mb-6">
-                  Zie Fan of the Match in actie met een persoonlijke demo van 15 minuten. Perfect voor een eerste kennismaking.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <button 
-                  onClick={() => setShowDemoModal(true)}
-                  className="brand-button w-full justify-center hover:scale-105 transition-transform duration-200"
-                >
-                  Plan een Demo
-                </button>
-              </div>
-              
-              {/* Contact Information onder demo */}
-              <div className="mt-8 pt-8 border-t border-brand-border">
-                <div className="space-y-6">
-                  <div className="text-center">
-                    <h4 className="text-xl font-bold text-white">Fan of the Match</h4>
-                    <p className="text-inactive">part of LiveWall Group</p>
+          <div className="grid lg:grid-cols-2 gap-10 items-stretch">
+            <div className="flex flex-col h-full justify-center">
+              <h2 className="text-4xl md:text-7xl font-black lime-text uppercase mb-6 text-left">
+                READY TO ENGAGE YOUR FANS?
+              </h2>
+              <div className="flex-1 flex items-center">
+                <div className="bg-card-custom p-8 scroll-reveal hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between h-full w-full">
+                  <div className="text-center mb-8">
+                    <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
+                      <Play className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-4">Schedule a live demo</h3>
+                    <p className="text-brand-text mb-6">
+                      See Fan of the Match in action with a personal 15-minute demo. Perfect for a first introduction.
+                    </p>
                   </div>
-                  <div className="space-y-3 text-main text-center">
-                    <p className="flex items-center justify-center">
-                      <MapPin className="w-4 h-4 mr-3 lime-text flex-shrink-0" />
-                      <span className="text-sm">Daws House, 33-35 Daws Lane, London NW7 4SD</span>
-                    </p>
-                    <p className="flex items-center justify-center">
-                      <Phone className="w-4 h-4 mr-3 lime-text flex-shrink-0" />
-                      <span className="text-sm">+31 (0) 13 7113708</span>
-                    </p>
-                    <p className="flex items-center justify-center">
-                      <Mail className="w-4 h-4 mr-3 lime-text flex-shrink-0" />
-                      <a href="mailto:info@livewall.co.uk" className="hover:lime-text transition-colors text-sm">info@livewall.co.uk</a>
-                    </p>
+                  <div className="text-center mt-auto">
+                    <button 
+                      onClick={() => setShowDemoModal(true)}
+                      className="brand-button w-full justify-center hover:scale-105 transition-transform duration-200"
+                    >
+                      Book your demo
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* Contact Form */}
-            <div className="bg-card-custom p-8 scroll-reveal hover:shadow-xl hover:scale-[1.02] transition-all duration-300" style={{ animationDelay: '200ms' }}>
-              <h3 className="text-2xl font-bold mb-6">Stuur ons een bericht</h3>
-              <p className="text-brand-text mb-6">We reageren binnen 24 uur op uw vragen.</p>
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-6"
-              >
-                <input type="hidden" name="_captcha" value="false" />
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-main mb-2">Naam</label>
-                  <input type="text" name="name" id="name" required className="brand-input hover:border-brand-primary transition-colors duration-200" placeholder="Uw naam"/>
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-main mb-2">E-mailadres</label>
-                  <input type="email" name="email" id="email" required className="brand-input hover:border-brand-primary transition-colors duration-200" placeholder="Uw e-mailadres"/>
-                </div>
-                <div>
-                  <label htmlFor="bericht" className="block text-sm font-medium text-main mb-2">Bericht</label>
-                  <textarea name="bericht" id="bericht" rows={4} required className="brand-input hover:border-brand-primary transition-colors duration-200" placeholder="Stel hier uw vraag..."></textarea>
-                </div>
-                <div>
-                  <button type="submit" disabled={status.submitting} className="w-full brand-button font-bold py-3 px-8 text-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100">
-                    {status.submitting ? 'Bezig met verzenden...' : 'Verstuur'}
-                  </button>
-                </div>
-                {status.info.msg && (
-                  <div className={`mt-4 text-center text-sm font-medium ${status.info.error ? 'text-red-400' : 'lime-text'}`}>
-                    {status.info.msg}
+            {/* Contact Form - visually improved two-column layout */}
+            <div className="bg-card-custom p-8 scroll-reveal hover:shadow-xl hover:scale-[1.02] transition-all duration-300 h-full flex flex-col justify-between" style={{ animationDelay: '200ms' }}>
+              <div className="flex items-center mb-6">
+                <Mail className="w-6 h-6 lime-text mr-3" />
+                <h3 className="text-4xl font-bold">Get in contact</h3>
+              </div>
+              <p className="text-brand-text mb-8">Curious about our Fan of the Match tool? Ask us anything!</p>
+              <div className="flex-1 flex items-center justify-center">
+                <div className="w-full">
+                  {/* Hubspot embedded form with custom styling wrapper */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="w-full">
+                      <div className="flex flex-col space-y-4">
+                        <div id="hubspot-form-wrapper" className="w-full">
+                          {/* Hubspot form will be injected here */}
+                          {/* Styling will be inherited from parent */}
+                          {/* See HubspotFormWrapper.tsx for script logic */}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                )}
-              </form>
+                  {/* Hubspot embedded form with styling */}
+                  <HubspotFormWrapper />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
 
       {/* Demo Modal */}
       {showDemoModal && (

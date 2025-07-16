@@ -20,10 +20,10 @@ const LogoScroller: React.FC = () => {
   ];
 
   return (
-    <div className="logo-scroller-container bg-gray-800 py-8">
+    <div className="logo-scroller-container bg-gray-800 py-4">
       <div className="container mx-auto px-6 text-center mb-6">
         <p className="text-xs uppercase tracking-wider text-gray-400 font-medium">
-          Gekozen door de grootste namen in sport en entertainment
+          Proudly partnering with
         </p>
       </div>
       <div className="logo-scroller">

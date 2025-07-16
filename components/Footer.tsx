@@ -1,17 +1,31 @@
 import React from 'react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-footer-custom py-12">
       <div className="container mx-auto px-6">
-        <div className="text-center text-main">
-           <a href="#home" className="text-xl font-black tracking-tighter text-white mb-2 inline-block">
-            Fan of the <span className="lime-text">Match</span>
-          </a>
-          <p className="text-sm text-inactive">Een product van <a href="#" className="underline hover:lime-text">Wave</a>, onderdeel van de <a href="#" className="underline hover:lime-text">LiveWall Group</a>.</p>
-        </div>
-        <div className="mt-8 border-t border-brand-border pt-8 text-center text-inactive">
-          <p className="text-sm">© 2025 Fan of the Match. Alle rechten voorbehouden.</p>
+          <div className="space-y-6">
+            <div className="text-center">
+              <h4 className="text-xl font-bold text-white">Fan of the <span className="lime-text">Match</span></h4>
+              <p className="text-inactive">part of LiveWall Group</p>
+            </div>
+            <div className="mt-8 pt-8 border-t border-brand-border">
+            <div className="space-y-3 text-main text-center">
+              <p className="flex items-center justify-center">
+                <MapPin className="w-4 h-4 mr-3 lime-text flex-shrink-0" />
+                <span className="text-sm">Daws House, 33-35 Daws Lane, London NW7 4SD</span>
+              </p>
+              <p className="flex items-center justify-center">
+                <Phone className="w-4 h-4 mr-3 lime-text flex-shrink-0" />
+                <span className="text-sm">+31 (0) 13 7113708</span>
+              </p>
+              <p className="flex items-center justify-center">
+                <Mail className="w-4 h-4 mr-3 lime-text flex-shrink-0" />
+                <a href="mailto:info@livewall.co.uk" className="hover:lime-text transition-colors text-sm">info@livewall.co.uk</a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
