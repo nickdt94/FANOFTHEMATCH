@@ -9,11 +9,39 @@ export type { CaseStudy };
 // Internal CaseCard component to simplify ref handling.
 const CaseCard = ({ study, delay }: { study: CaseStudy, delay: string }) => {
     const [ref, isVisible] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1 });
-    const slug = createSlug(study.title, study.category);
-
+    // Map category/title to new hardcoded routes
+    let casePath = '';
+    switch (study.category) {
+        case 'Odido & ISU':
+            casePath = '/case/odido-isu';
+            break;
+        case 'UEFA':
+            casePath = '/case/uefa';
+            break;
+        case 'Manchester City':
+            casePath = '/case/manchester-city';
+            break;
+        case 'ABN AMRO Open':
+            casePath = '/case/abn-amro-open';
+            break;
+        case 'Heineken Player 0.0':
+            casePath = '/case/heineken';
+            break;
+        case 'KNVB - Dutch Football Association':
+            casePath = '/case/knvb';
+            break;
+        case 'Red Bull Racing & Honda':
+            casePath = '/case/red-bull-racing-honda';
+            break;
+        case 'BWT Alpine F1 Team':
+            casePath = '/case/bwt-alpine-f1';
+            break;
+        default:
+            casePath = '#';
+    }
     return (
         <div ref={ref} className={`h-full scroll-animate ${delay} ${isVisible ? 'is-visible' : ''}`}>
-            <Link href={`/case/${slug}`} className="block h-full">
+            <Link href={casePath} className="block h-full">
                 <div className="h-full case-card bg-card-custom cursor-pointer flex flex-col overflow-hidden">
                     <div className="link-icon">
                         <ArrowUpRight className="w-5 h-5" />

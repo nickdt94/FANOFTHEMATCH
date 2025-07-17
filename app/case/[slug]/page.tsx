@@ -120,11 +120,11 @@ const enhancedCaseData = {
             { icon: Target, value: "90%", label: "Fan Participation" },
             { icon: TrendingUp, value: "200%", label: "Engagement Boost" }
         ],
-        challenge: "The KNVB wanted to create an electrifying interactive experience for Dutch national team and Orange Lionesses supporters at the Amsterdam Arena.",
-        solution: "We developed the Fan of the Match quiz platform that transforms the Amsterdam Arena into an Orange stronghold, engaging fans both in the stadium and at home.",
+        challenge: "The excitement builds even before kick-off with the use of the ContentWall and interactive polls. Fans can actively participate, for instance, by voting for their favorite songs, with the most requested tracks being played during the team's warm-up. This fosters a unique sense of involvement, making fans an integral part of the pre-match build-up.",
+        solution: "During halftime, the stadium buzzes with the KPN Fan of the Match Quiz. This engaging interactive experience, proudly sponsored by KPN, offers fans the chance to win incredible prizes, from brand new smartphones and tickets for the next match, to exclusive signed items. It's a thrilling opportunity for fans to test their knowledge and feel even closer to the action. Beyond the entertainment, this quiz is a prime example of how the KNVB can secure opt-ins for partners like KPN, demonstrating tangible value for sponsors.",
         results: "The platform successfully engaged 90% of stadium attendees with real-time content, polls, and exclusive insights during matches.",
-        impact: "The Amsterdam Arena became a truly interactive venue, with fans contributing to the electric atmosphere through synchronized participation.",
-        recognition: "The KNVB platform set new standards for national team fan engagement, inspiring similar implementations across European football associations."
+        impact: "By embracing Fan of the Match, the KNVB is not just hosting football matches, but curating a truly immersive and unforgettable experience for its passionate fanbase.",
+        recognition: "Ready to ignite your fan engagement and create truly memorable experiences? Discover how Fan of the Match can elevate your next event!"
     },
     'red-bull-racing-honda-mobile-race-game': {
         ...caseStudies[4],
@@ -465,10 +465,10 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="bg-card-custom rounded-2xl p-8">
                             <h2 className="text-2xl md:text-3xl font-black mb-4">
-                                Klaar om je eigen verhaal te schrijven?
+                                Ready to ignite your fan engagement and create truly memorable experiences?
                             </h2>
                             <p className="text-main text-lg mb-6">
-                                Laat ons je helpen een even krachtige ervaring te creëren voor jouw merk.
+                               Discover how Fan of the Match can elevate your next event!
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link href="/#contact" className="brand-button">

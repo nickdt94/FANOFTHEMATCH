@@ -47,12 +47,19 @@ export const caseStudies: CaseStudy[] = [
         url: "https://www.wecreatewaves.com/ourwork/manchester-city-fan-of-the-match"
     },
     {
-        image: "https://a.storyblok.com/f/174314/1920x721/adb3675340/header.png/m/1500x0/filters:format(webp):quality(80)",
-        category: "ESPN",
-        title: "Man of the Match platform",
-        description: "Looking for a way to activate their Man of the Match concept, ESPN and Eredivisie sponsor KPN turned to us to develop a fully automated voting platform. We set out to create a solution that would allow ESPN to seamlessly integrate the Man of the Match concept into their Eredivisie broadcasts.  With several matches every weekend, a manual solution simply wouldn't cut it for ESPN. That's why we developed a platform that would automatically gather all the necessary information, including line-ups, substitutions, and stats, via an API connection with data provider StatsPerform.",
-        longDescription: "Looking for a way to activate their Man of the Match concept, ESPN and Eredivisie sponsor KPN turned to us to develop a fully automated voting platform. We set out to create a solution that would allow ESPN to seamlessly integrate the Man of the Match concept into their Eredivisie broadcasts. With several matches every weekend, a manual solution simply wouldn't cut it. That's why we developed a platform that would automatically gather all the necessary information, including line-ups, substitutions, and stats, via an API connection with data provider StatsPerform.",
-        url: "https://www.wecreatewaves.com/ourwork/espn-man-of-the-match"
+        image: "/ABN/ABNHEADER.jpg",
+        category: "ABN AMRO Open",
+        title: "Become the tennis ball yourself",
+        description: "The ABN AMRO Open has long been more than just top-tier tennis; it's an event where sport, business, culinary delights, and social initiatives converge.",
+        longDescription: "The ABN AMRO Open has long been more than just top-tier tennis; it's an event where sport, business, culinary delights, and social initiatives converge. This prestigious ATP Tour 500 tournament, held at the iconic Rotterdam Ahoy, is renowned for attracting world-class players and its innovative approach. And this year, we're adding a spectacular new dimension to your fan experience! Imagine: you are the tennis ball! With a groundbreaking new way to interact, you can show your enthusiasm directly on the hallowed tennis court. Forget the big screens; thanks to our unique technology, you'll see yourself – as a virtual tennis ball – moving across the court. Share your emotions with vibrant emojis that accompany your 'ball' movements, visible live to everyone in the arena! This is your chance to be part of the action in a way never seen before. Get swept away by the excitement of the match and show how passionate you are about tennis. Come to the ABN AMRO Open and become part of this visual spectacle!",
+        url: '/case/abn-amro-open',
+        galleryImages: [
+            "/ABN/ABNHEADER.jpg",
+            "/ABN/ABN1.jpg",
+            "/ABN/ABN2.jpg",
+            "/stadium/Euros2.webp"
+        ],
+        videoUrl: "/ABN/ABNAMRO.mp4"
     },
     {
         image: "https://a.storyblok.com/f/174314/700x519/ebe9979890/img_1.jpg/m/800x0/filters:format(webp):quality(80)",

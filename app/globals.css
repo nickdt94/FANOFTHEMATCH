@@ -2223,10 +2223,16 @@ h1, h2, h3, h4, h5, h6 {
 .case-card {
     position: relative;
     height: 100%;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    border-radius: var(--brand-card-radius);
+    border: 1.5px solid #fff;
+    min-height: 480px;
+    max-height: 480px;
+    display: flex;
+    flex-direction: column;
 }
 .case-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) scale(1.03);
     box-shadow: 0 8px 30px rgba(255, 122, 0, 0.15);
 }
 .case-card .link-icon {
@@ -2293,7 +2299,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 1px;
     background: linear-gradient(
         90deg,
-        transparent 0%,
+        transparent    0%,
         rgba(255, 255, 255, 0.3) 50%,
         transparent 100%
     );
@@ -2485,7 +2491,9 @@ h1, h2, h3, h4, h5, h6 {
 .cases-container {
     position: relative;
 }
-
+.cases-grid {
+    padding-top: 24px;
+}
 /* Dots Navigation */
 .cases-dots {
     display: flex;
@@ -3140,5 +3148,28 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes stat-glow {
     0%, 100% { opacity: 0.8; }
     50% { opacity: 1; }
+}
+
+.case-card {
+    position: relative;
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    border-radius: var(--brand-card-radius);
+    border: 1.5px solid #fff;
+    min-height: 480px;
+    max-height: 480px;
+    display: flex;
+    flex-direction: column;
+}
+
+.case-card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 30px rgba(255, 122, 0, 0.15);
+}
+.case-card .w-full.h-56.overflow-hidden,
+.case-card .w-full.h-56.overflow-hidden img {
+    border-top-left-radius: var(--brand-card-radius);
+    border-top-right-radius: var(--brand-card-radius);
+    overflow: hidden;
 }
 
