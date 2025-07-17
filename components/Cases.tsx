@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
-import { caseStudies, createSlug, type CaseStudy } from '../data/cases';
+import { caseStudies, type CaseStudy } from '../data/cases';
 
 export type { CaseStudy };
 
