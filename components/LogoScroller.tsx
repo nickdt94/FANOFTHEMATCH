@@ -29,7 +29,7 @@ const LogoScroller: React.FC = () => {
         <div className="logo-track">
           {/* First set of logos */}
           {logos.map((logo, index) => (
-            <div key={`first-${index}`} className="logo-item">
+            <div key={`first-${index}`} className="logo-item mb-10">
               <img 
                 src={logo.src} 
                 alt={logo.name}
@@ -44,7 +44,7 @@ const LogoScroller: React.FC = () => {
           ))}
           {/* Second set of logos for seamless loop */}
           {logos.map((logo, index) => (
-            <div key={`second-${index}`} className="logo-item">
+            <div key={`second-${index}`} className="logo-item mb-6">
               <img 
                 src={logo.src} 
                 alt={logo.name}

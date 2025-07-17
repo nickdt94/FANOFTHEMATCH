@@ -3057,7 +3057,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-item {
     flex-shrink: 0;
-    margin: 0 2.5rem;
+    margin: 0 2.5rem 1.0rem 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
