@@ -28,35 +28,35 @@ const GameModes: React.FC = () => {
       id: 'fancam',
       name: 'FANCAM',
       icon: Camera,
-      title: 'Fancam',
-      description: 'Laat je fans zichzelf filmen en personaliseer hun moment met jullie club-filters. Direct te delen en perfect voor social media buzz.',
+      title: 'Your Moment with FanCam',
+      description: 'Empower fans to share their branded event experience with photos & videos, live from the stands.',
       benefits: [
-        '100% Persoonlijk & Live in het Stadion',
-        'Instant Sociale Media Content'
+        '100% personal & live in the stadium',
+        'Instant social media content'
       ],
-      image: 'https://placehold.co/600x450/A2E832/121212?text=Fancam+in+Actie&font=Inter'
+      image: 'https://placehold.co/600x450/FF7A00/121212?text=Fancam+in+Actie&font=Inter'
     },
     {
       id: 'quiz',
       name: 'QUIZ',
       icon: HelpCircle,
-      title: 'Quiz',
-      description: 'Interactieve real-time quiz waarbij fans hun smartphone gebruiken om mee te doen. Hun antwoorden verschijnen live op het stadionscherm.',
+      title: 'The Interactive Quiz',
+      description: 'Ignite real-time excitement with trivia, polls & prize draws. Engage fans instantly!',
       benefits: [
-        'Real-time & Maximale Engagement',
-        'Live Interactie op het Grote Scherm'
+        'Real-time & maximum engagement',
+        'Live interaction on the big screen'
       ],
-      image: 'https://placehold.co/600x450/A2E832/121212?text=Live+Quiz+op+Scherm&font=Inter'
+      image: 'https://placehold.co/600x450/FF7A00/121212?text=Live+Quiz+op+Scherm&font=Inter'
     },
     {
       id: 'contentwall',
       name: 'CONTENTWALL',
       icon: Sparkles,
-      title: 'Contentwall',
-      description: 'AI-powered transformatie van selfies naar spectaculaire, themagerichte creaties. Live getoond op het grote scherm voor maximale impact.',
+      title: 'Dynamic Content Wall',
+      description: 'Amplify fan interaction by showcasing live content, polls & highlights on big screens.',
       benefits: [
-        'AI Powered & Viraal Potentieel',
-        'Onvergetelijke Fan Momenten'
+        'AI powered & viral potential',
+        'Unforgettable fan moments'
       ],
       images: stadiumImages, // Use multiple images for slider
       hasSlider: true
@@ -71,10 +71,10 @@ const GameModes: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-wide text-[#FFFFFF] mb-6">
-            Ontdek Onze Spelmodi
+            Discover our concepts
           </h2>
           <p className="text-lg text-[#E0E1DD] max-w-3xl mx-auto">
-            Drie direct inzetbare spelervaringen. De perfecte conversiestarter om de mogelijkheden van fan engagement te laten zien.
+            Three ready-to-deploy game experiences. The ideal way to discover the power of fan engagement.
           </p>
         </div>
 
@@ -88,8 +88,8 @@ const GameModes: React.FC = () => {
                   onClick={() => setActiveTab(mode.id)}
                   className={`px-6 py-3 rounded-full font-bold uppercase tracking-wide transition-all duration-300 ${
                     activeTab === mode.id
-                      ? 'bg-[#A2E832] text-[#121212]'
-                      : 'bg-[#1A1A1A] text-[#E0E1DD] hover:bg-[#282828]'
+                      ? 'bg-[#FF7A00] text-[#121212]'
+                      : 'bg-[#1A1A1A] text-[#E0E1DD] hover:bg-[#282828] border border-[#FF7A00]'
                   }`}
                 >
                   {mode.name}
@@ -111,7 +111,7 @@ const GameModes: React.FC = () => {
               {/* Text Content - Left Column */}
               <div className="order-2 lg:order-1">
                 <div className="flex items-center mb-4">
-                  <activeGameMode.icon className="w-8 h-8 text-[#A2E832] mr-3" />
+                  <activeGameMode.icon className="w-8 h-8 text-[#FF7A00] mr-3" />
                   <h3 className="text-3xl font-black uppercase tracking-wide text-[#FFFFFF]">{activeGameMode.title}</h3>
                 </div>
                 
@@ -123,7 +123,7 @@ const GameModes: React.FC = () => {
                   {activeGameMode.benefits.map((benefit, index) => (
                     <li key={index} className="flex items-start">
                       <svg 
-                        className="w-6 h-6 text-[#A2E832] mr-3 mt-0.5 flex-shrink-0"
+                        className="w-6 h-6 text-[#FF7A00] mr-3 mt-0.5 flex-shrink-0"
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
@@ -173,8 +173,8 @@ const GameModes: React.FC = () => {
                             onClick={() => setCurrentImageIndex(index)}
                             className={`w-3 h-3 rounded-full transition-all duration-300 ${
                               index === currentImageIndex 
-                                ? 'bg-[#A2E832] scale-110' 
-                                : 'bg-white/40 hover:bg-white/60'
+                                ? 'bg-[#FF7A00] scale-110' 
+                                : 'bg-white/40 hover:bg-white/60 border border-[#FF7A00]'
                             }`}
                           />
                         ))}

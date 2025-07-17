@@ -10,7 +10,6 @@ const LogoScroller: React.FC = () => {
     { name: 'Real Sociedad', src: '/logos/real-sociedad.png' },
     { name: 'West Ham United', src: '/logos/west-ham.png' },
     { name: 'Red Bull Salzburg', src: '/logos/red-bull-salzburg.png' },
-    { name: 'Oxford United', src: '/logos/oxford-united.png' },
     { name: 'Manchester City', src: '/logos/manchester-city.png' },
     { name: 'KAA Gent', src: '/logos/kaa-gent.png' },
     { name: 'FC Robinstijn', src: '/logos/fc-robinstijn.png' },

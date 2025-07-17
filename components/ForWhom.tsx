@@ -11,8 +11,8 @@ const FeatureCard = ({ IconComponent, title, description, delay }: {
     const [ref, isVisible] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1 });
     return (
         <div ref={ref} className={`bg-card-custom p-8 scroll-animate h-full ${delay} ${isVisible ? 'is-visible' : ''}`}>
-            <IconComponent className="w-8 h-8 lime-text mb-6" />
-            <h3 className="font-bold text-xl lime-text mb-4">{title}</h3>
+            <IconComponent className="w-8 h-8 text-[#FF7A00] mb-6" />
+            <h3 className="font-bold text-xl text-[#FF7A00] mb-4">{title}</h3>
             <p className="text-inactive leading-relaxed">{description}</p>
         </div>
     );

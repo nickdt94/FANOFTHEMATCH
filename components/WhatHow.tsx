@@ -17,7 +17,7 @@ const WhatHow: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
         </svg>
       ),
-      title: "Live Activation",
+      title: "Live activation",
       description: "Instant fan engagement in real-time"
     },
     {
@@ -36,8 +36,9 @@ const WhatHow: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-            Your Moment. Our Expertise. Immediate Impact.
-          </h2>
+            Your Moment. Our Expertise. Instant Impact.
+                    </h2>
+            <p>From concept to live action in days. We design unique, bespoke fan journeys that transform your event and instantly generate valuable data.</p>
         </div>
         
         {/* Process Steps */}

@@ -100,7 +100,7 @@ const InteractiveQuiz: React.FC = () => {
     }
     
     if (index === questions[currentQuestion].correctAnswer) {
-      return 'bg-green-500 text-white';
+      return 'bg-[#FF7A00] text-white';
     }
     
     if (index === selectedAnswer && selectedAnswer !== questions[currentQuestion].correctAnswer) {

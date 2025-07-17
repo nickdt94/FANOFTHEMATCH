@@ -32,7 +32,7 @@ const CaseModal: React.FC<CaseModalProps> = ({ caseData, onClose }) => {
                 <img src={caseData.image} alt={caseData.title} className="modal-image" />
                 <div className="modal-text-content p-6 md:p-8">
                     <div className="flex-grow overflow-y-auto pr-4">
-                        <p className="lime-text font-bold mb-1">{caseData.category}</p>
+                        <p className="font-bold mb-1" style={{ color: '#FF7A00' }}>{caseData.category}</p>
                         <h3 className="text-2xl font-bold mb-4">{caseData.title}</h3>
                         <p className="text-main text-base mb-6">{caseData.longDescription || caseData.description}</p>
                     </div>

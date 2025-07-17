@@ -42,13 +42,13 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <a href="#home" onClick={handleScrollTo} className="text-2xl font-black tracking-tighter text-white">
-            Fan of the <span className="lime-text">Match</span>
+            Fan of the <span style={{ color: '#FF7A00' }}>Match</span>
           </a>
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#what-how" onClick={handleScrollTo} className="text-main hover:lime-text transition">What & How</a>
-            <a href="#spelmodi" onClick={handleScrollTo} className="text-main hover:lime-text transition">Spelmodi</a>
-            <a href="#cases" onClick={handleScrollTo} className="text-main hover:lime-text transition">Cases</a>
-            <a href="#contact" onClick={handleScrollTo} className="brand-button">Start the Conversation</a>
+            <a href="#what-how" onClick={handleScrollTo} className="text-main transition hover:text-[#FF7A00]">What & How</a>
+            <a href="#cases" onClick={handleScrollTo} className="text-main transition hover:text-[#FF7A00]">Cases</a>
+            <a href="#spelmodi" onClick={handleScrollTo} className="text-main transition hover:text-[#FF7A00]">Concepts</a>
+            <a href="#contact" onClick={handleScrollTo} className="brand-button brand-button--header">Start the Conversation</a>
           </nav>
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none">
@@ -59,11 +59,11 @@ const Header: React.FC = () => {
       </div>
       {/* Mobile Menu */}
       <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden border-t border-brand-border`}>
-        <a href="#what-how" onClick={handleScrollTo} className="block py-3 px-6 text-sm text-main hover:lime-text">What & How</a>
-        <a href="#spelmodi" onClick={handleScrollTo} className="block py-3 px-6 text-sm text-main hover:lime-text">Spelmodi</a>
-        <a href="#cases" onClick={handleScrollTo} className="block py-3 px-6 text-sm text-main hover:lime-text">Cases</a>
+        <a href="#what-how" onClick={handleScrollTo} className="block py-3 px-6 text-sm text-main hover:text-[#FF7A00]">What & How</a>
+        <a href="#cases" onClick={handleScrollTo} className="block py-3 px-6 text-sm text-main hover:text-[#FF7A00]">Cases</a>
+        <a href="#spelmodi" onClick={handleScrollTo} className="block py-3 px-6 text-sm text-main hover:text-[#FF7A00]">Concepts</a>
         <div className="p-4">
-          <a href="#contact" onClick={handleScrollTo} className="block brand-button text-center w-full">Start the Conversation</a>
+          <a href="#contact" onClick={handleScrollTo} className="block brand-button brand-button--header text-center w-full">Start the Conversation</a>
         </div>
       </div>
     </header>

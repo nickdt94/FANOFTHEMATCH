@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {
         'brand-bg': '#121212',
-        'brand-primary': '#A2E832',
+        'brand-primary': '#FF7A00',
         'brand-secondary': '#FF7A00',
         'brand-text-heading': '#FFFFFF',
         'brand-text': '#E0E1DD',

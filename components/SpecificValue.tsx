@@ -5,8 +5,8 @@ const SpecificValue: React.FC = () => {
     {
       title: "For Clubs & Leagues",
       benefits: [
-        "Increase fan engagement during matches and events",
-        "Collect valuable fan data for better targeting and communication"
+        "Boost stadium atmosphere & fan loyalty.",
+        "Collect valuable opt-in fan data."
       ],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -17,8 +17,8 @@ const SpecificValue: React.FC = () => {
     {
       title: "For Sponsoring Brands", 
       benefits: [
-        "Create memorable brand experiences that resonate with fans",
-        "Measure sponsorship ROI with concrete engagement metrics"
+        "Achieve measurable brand activation & reach.",
+        "Drive direct interaction with target audiences."
       ],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -29,8 +29,8 @@ const SpecificValue: React.FC = () => {
     {
       title: "For Event Organizers",
       benefits: [
-        "Transform any event into an interactive experience",
-        "Generate social media content and increase event visibility"
+        "Effortless interaction, unique visitor experience.",
+        "Enhance event atmosphere with ease."
       ],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">

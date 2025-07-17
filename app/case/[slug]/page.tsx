@@ -202,7 +202,7 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
     return (
         <main className="min-h-screen bg-brand-bg">
             <Spotlight />
-            
+
             {/* Header */}
             <header className="fixed top-0 left-0 right-0 z-50 bg-brand-bg/80 backdrop-blur-sm border-b border-brand-border">
                 <div className="container mx-auto px-6 py-4">
@@ -216,16 +216,16 @@ export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
                 </div>
             </header>
 
-            {/* Hero Section */}
+            {/* Hero Section - Custom KNVB Text */}
             <section className="pt-20 pb-12 overflow-hidden">
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl mx-auto text-center mb-12">
-                        <p className="lime-text font-bold text-lg mb-4">{caseData.category}</p>
+                        <p className="font-bold text-lg mb-4" style={{ color: '#FF7A00' }}>KNVB</p>
                         <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-                            {caseData.title}
+                            Igniting Orange Fever
                         </h1>
                         <p className="text-xl text-main max-w-3xl mx-auto mb-8">
-                            {caseData.description}
+                            The KNVB (Dutch Football Association) has successfully elevated its matchday experience by integrating Fan of the Match moments, creating a more interactive and engaging atmosphere for supporters. Through a dynamic combination of quizzing, the ContentWall, and the innovative FanCam, the KNVB is transforming passive spectators into active participants. This initiative serves a dual purpose: to entertain fans and to gather valuable audience data and opt-ins, making it highly attractive for sponsors like KPN.
                         </p>
                     </div>
                 </div>

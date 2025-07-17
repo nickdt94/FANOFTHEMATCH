@@ -28,14 +28,14 @@ const CaseCard = ({ study, delay }: { study: CaseStudy, delay: string }) => {
                         />
                     </div>
                     <div className="p-6 flex flex-col flex-grow">
-                        <p className="lime-text font-bold mb-1">{study.category}</p>
+                        <p className="font-bold mb-1" style={{ color: '#FF7A00' }}>{study.category}</p>
                         <h3 className="text-xl font-bold mb-3">{study.title}</h3>
                         <p className="text-inactive text-sm line-clamp-3 mb-4">
                             {study.description}
                         </p>
                         <div className="mt-auto pt-2">
-                            <span className="font-semibold lime-text">
-                                Bekijk case
+                            <span className="font-semibold" style={{ color: '#FF7A00' }}>
+                                See case
                                 <ArrowRight className="inline-block w-4 h-4 ml-1 align-middle" />
                             </span>
                         </div>
@@ -102,9 +102,9 @@ const Cases: React.FC = () => {
     return (
         <section id="cases" className="bg-brand-bg py-20">
              <div className="container mx-auto px-6 text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-black">Bewezen Succes in de Praktijk</h2>
+                <h2 className="text-4xl md:text-5xl font-black">Proven Impact. Real results.</h2>
                 <p className="text-lg text-main mt-4 max-w-2xl mx-auto">
-                    Van volle stadions tot internationale e-sport toernooien, onze tool maakt overal impact.
+                    Fan of the Match delivers concrete benefits for sports clubs & leagues, sponsoring brands, and event organizers.
                 </p>
             </div>
             <div className="container mx-auto px-6 cases-container">

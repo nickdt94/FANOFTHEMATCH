@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
         <div className="max-w-6xl mx-auto mb-12">
           <div className="grid lg:grid-cols-2 gap-10 items-stretch">
             <div className="flex flex-col h-full justify-center">
-              <h2 className="text-4xl md:text-7xl font-black lime-text uppercase mb-6 text-left">
+              <h2 className="text-5xl md:text-8xl font-black lime-text uppercase mb-6 text-center">
                 READY TO ENGAGE YOUR FANS?
               </h2>
               <div className="flex-1 flex items-center">
@@ -81,23 +81,8 @@ const Contact: React.FC = () => {
                 <h3 className="text-4xl font-bold">Get in contact</h3>
               </div>
               <p className="text-brand-text mb-8">Curious about our Fan of the Match tool? Ask us anything!</p>
-              <div className="flex-1 flex items-center justify-center">
-                <div className="w-full">
-                  {/* Hubspot embedded form with custom styling wrapper */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="w-full">
-                      <div className="flex flex-col space-y-4">
-                        <div id="hubspot-form-wrapper" className="w-full">
-                          {/* Hubspot form will be injected here */}
-                          {/* Styling will be inherited from parent */}
-                          {/* See HubspotFormWrapper.tsx for script logic */}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Hubspot embedded form with styling */}
-                  <HubspotFormWrapper />
-                </div>
+              <div className="w-full mt-4">
+                <HubspotFormWrapper />
               </div>
             </div>
           </div>
@@ -121,7 +106,7 @@ const Contact: React.FC = () => {
             </div>
             <div className="demo-modal-iframe">
               <iframe
-                src="https://cal.com/fanofthematch"
+                src="https://cal.com/koen-verhoof/30min?user=koen-verhoof&overlayCalendar=true"
                 width="100%"
                 height="600"
                 frameBorder="0"
