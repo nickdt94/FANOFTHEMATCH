@@ -83,7 +83,7 @@ export default function OdidoISUCasePage() {
       <section className="mb-16">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black mb-6">How fans could 'Show their support'</h2>
+            <h2 className="text-2xl md:text-3xl font-black mb-6">How fans could &apos;Show their support&apos;</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-main text-lg leading-relaxed">{caseData.challenge}</p>
             </div>
