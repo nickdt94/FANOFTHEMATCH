@@ -1,6 +1,6 @@
 
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel } from 'swiper/modules';
 import 'swiper/css';
@@ -24,6 +24,7 @@ const CaseCard = ({ study, delay }: { study: CaseStudy, delay: string }) => {
                         <ArrowUpRight className="w-5 h-5" />
                     </div>
                     <div className="w-full h-56 overflow-hidden">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img 
                             src={study.image} 
                             alt={study.title} 
@@ -52,7 +53,7 @@ const CaseCard = ({ study, delay }: { study: CaseStudy, delay: string }) => {
 };
 
 const Cases: React.FC = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
+    // Swiper pagination only, no activeIndex needed
 
     return (
         <section id="cases" className="bg-brand-bg py-20">
@@ -69,7 +70,7 @@ const Cases: React.FC = () => {
                     slidesPerView={3}
                     pagination={{ clickable: true }}
                     mousewheel={{ forceToAxis: true, sensitivity: 1 }}
-                    onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+                    // No activeIndex needed
                     style={{
                         paddingBottom: '2rem',
                         maxWidth: '1200px',
@@ -99,3 +100,4 @@ const Cases: React.FC = () => {
 };
 
 export default Cases;
+// ...existing code...
