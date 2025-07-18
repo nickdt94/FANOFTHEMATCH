@@ -62,12 +62,19 @@ export const caseStudies: CaseStudy[] = [
         videoUrl: "/ABN/ABNAMRO.mp4"
     },
     {
-        image: "https://a.storyblok.com/f/174314/700x519/ebe9979890/img_1.jpg/m/800x0/filters:format(webp):quality(80)",
-        category: "Heineken Player 0.0",
-        title: "Interactive race game with Max Verstappen",
-        description: "The Player 0.0 initiative is part of Heineken's global responsible consumption platform, When You Drive, Never Drink, which was conceived to champion responsible consumption, expanding to new audiences in the world of virtual racing. Underscoring that the best drivers are those who choose not to drink.",
-        longDescription: "The Player 0.0 initiative is part of Heineken's global responsible consumption platform, 'When You Drive, Never Drink', which was conceived to champion responsible consumption, expanding to new audiences in the world of virtual racing. In a unique collaboration, we developed an interactive racing game that allowed fans to compete virtually against Max Verstappen, reinforcing the message that the best drivers are those who choose not to drink. The activation was a huge success, generating massive engagement and positive brand association for Heineken.",
-        url: "https://www.livewall.be/cases/heineken-player-0-0-race-game-activatie"
+        image: "/barcelona/BARCAHEADER.webp",
+        category: "FC Barcelona",
+        title: "Més que un Club. More than a Quiz.",
+        description: "'Més que un Club' is the DNA that flows through the veins of the entire FC Barcelona. It is a promise to every culer that the club represents more than just the performance on the pitch. It is a philosophy that is just as powerful for the men's team in Camp Nou as it is for the world-dominant Femení team.",
+        longDescription: "At Wave, we have embraced this philosophy and brought it to life. For the entire FC Barcelona, we gave the supporters the voice they deserve through one complete digital interaction program.\n\nPutting the Fans in Control\nWe transformed matchday into a continuous, interactive event. Through the stadium screens and the fans' mobile phones, we rolled out a wide range of modules that put the supporter at the heart of the action.\n\nThis was much more than a simple quiz. It was a total experience, featuring:\n\n• Dynamic Polls: Fans could share their live opinions or choose the Man or Woman of the Match.\n• Diverse Quiz Questions: A rich mix of questions tested the fans' knowledge, from fast-paced trivia to the popular and visual 'Guess the Goal' rounds featuring iconic goals from the club's history.\n• Influence on the Atmosphere: Supporters gained direct influence over the stadium experience with questions like: \"Which song should we play next?\".\n\nThis program celebrated the entire club culture, from the heroes of the past like Cruyff to the stars of today like Alexia Putellas.\n\nA Proven Formula for Your Club\nThis is how 'Més que un Club' comes to life digitally: not with isolated promotions, but with an integrated, diverse program that truly puts the supporter at the center.",
+        url: "/case/barcelona",
+        galleryImages: [
+            "/barcelona/BARCAHEADER.webp",
+            "/barcelona/BARCA1.webp",
+            "/barcelona/BARCA2.webp",
+            "/barcelona/BARCA3.webp",
+            "/barcelona/BARCA4.webp"
+        ]
     },
     {
         image: "https://a.storyblok.com/f/174314/1080x1080/32f0653db7/knvb-gallery-2.png/m/800x0/filters:format(webp):quality(80)",

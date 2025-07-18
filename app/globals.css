@@ -2446,12 +2446,14 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 1rem; /* Space for shadows/scrollbar */
     scrollbar-width: none; /* Firefox */
     user-select: none;
+    overflow-y: hidden;
+}
+
 /* Fix: allow vertical scroll on mobile when touching cards */
 @media (max-width: 767px) {
   .cases-grid {
     touch-action: pan-y;
   }
-}
 }
 
 /* Case cards should not interfere with page scrolling */

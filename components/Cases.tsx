@@ -24,8 +24,8 @@ const CaseCard = ({ study, delay }: { study: CaseStudy, delay: string }) => {
         case 'ABN AMRO Open':
             casePath = '/case/abn-amro-open';
             break;
-        case 'Heineken Player 0.0':
-            casePath = '/case/heineken';
+        case 'FC Barcelona':
+            casePath = '/case/barcelona';
             break;
         case 'KNVB - Dutch Football Association':
             casePath = '/case/knvb';

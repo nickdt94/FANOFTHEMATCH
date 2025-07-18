@@ -3,30 +3,30 @@ import Link from 'next/link';
 import Spotlight from '@/components/Spotlight';
 
 const caseData = {
-  title: "Interactive race game with Max Verstappen",
-  category: "Heineken Player 0.0",
-  description: "A digital racing experience for Heineken and F1 fans, combining entertainment with responsible drinking messaging and massive engagement.",
-  image: "https://a.storyblok.com/f/174314/700x519/ebe9979890/img_1.jpg/m/800x0/filters:format(webp):quality(80)",
-  heroImage: "https://a.storyblok.com/f/174314/700x519/ebe9979890/img_1.jpg/m/800x0/filters:format(webp):quality(80)",
+  title: "Més que un Club. More than a Quiz.",
+  category: "FC Barcelona",
+  description: "'Més que un Club' is the DNA that flows through the veins of the entire FC Barcelona. It is a promise to every culer that the club represents more than just the performance on the pitch. It is a philosophy that is just as powerful for the men's team in Camp Nou as it is for the world-dominant Femení team.",
+  image: "/barcelona/BARCA2.webp",
+  heroImage: "/barcelona/BARCAHEADER.webp",
   additionalImages: [
-    "https://a.storyblok.com/f/174314/700x519/ebe9979890/img_1.jpg/m/800x0/filters:format(webp):quality(80)",
-    "https://a.storyblok.com/f/174314/700x519/ebe9979890/img_2.jpg/m/800x0/filters:format(webp):quality(80)",
-    "https://a.storyblok.com/f/174314/700x519/ebe9979890/img_3.jpg/m/800x0/filters:format(webp):quality(80)"
+    "/barcelona/BARCA1.webp",,
+    "/barcelona/BARCA3.webp",
+    "/barcelona/BARCA4.webp"
   ],
   videoUrl: undefined,
   metrics: [
-    { icon: Users, value: "2M+", label: "Race Participants" },
-    { icon: Target, value: "85%", label: "Completion Rate" },
-    { icon: TrendingUp, value: "300%", label: "Engagement Increase" }
+    { icon: Users, value: "100,000+", label: "Engaged Supporters" },
+    { icon: Target, value: "Continuous", label: "Matchday Interaction" },
+    { icon: TrendingUp, value: "Total Experience", label: "Fan Control" }
   ],
-  challenge: "We developed an interactive racing game where fans could compete virtually against Max Verstappen, combining entertainment with responsible drinking messaging.",
-  solution: "The activation generated massive engagement with over 2 million race participants and created positive brand association for Heineken's responsible consumption initiative.",
-  results: "The campaign achieved a 300% increase in engagement and 85% completion rate, making it a benchmark for digital activations in F1.",
-  impact: "Heineken successfully promoted responsible drinking while entertaining fans, strengthening their brand association with F1.",
-  recognition: "The project was recognized for its innovative approach to combining entertainment and social responsibility in sports marketing."
+  challenge: "At Wave, we have embraced this philosophy and brought it to life. For the entire FC Barcelona, we gave the supporters the voice they deserve through one complete digital interaction program.",
+  solution: "We transformed matchday into a continuous, interactive event. Through the stadium screens and the fans' mobile phones, we rolled out a wide range of modules that put the supporter at the heart of the action.",
+  results: "This was much more than a simple quiz. It was a total experience, featuring: Dynamic Polls (Fans could share their live opinions or choose the Man or Woman of the Match), Diverse Quiz Questions (A rich mix of questions tested the fans' knowledge, from fast-paced trivia to the popular and visual 'Guess the Goal' rounds featuring iconic goals from the club's history), Influence on the Atmosphere (Supporters gained direct influence over the stadium experience with questions like: 'Which song should we play next?').",
+  impact: "This program celebrated the entire club culture, from the heroes of the past like Cruyff to the stars of today like Alexia Putellas.",
+  recognition: "A Proven Formula for Your Club: This is how 'Més que un Club' comes to life digitally: not with isolated promotions, but with an integrated, diverse program that truly puts the supporter at the center."
 };
 
-export default function HeinekenCasePage() {
+export default function BarcelonaCasePage() {
   return (
     <main className="min-h-screen bg-brand-bg">
       <Spotlight />
@@ -86,7 +86,7 @@ export default function HeinekenCasePage() {
       <section className="mb-16">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black mb-6">PROJECT OVERVIEW</h2>
+            <h2 className="text-2xl md:text-3xl font-black mb-6">Putting the Fans in Control</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-main text-lg leading-relaxed">{caseData.challenge}</p>
             </div>
@@ -94,32 +94,30 @@ export default function HeinekenCasePage() {
         </div>
       </section>
 
-      {/* Images Section - No video for this case */}
-      {caseData.additionalImages && (
-        <section className="mb-16">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {caseData.additionalImages.map((img, idx) => (
-                  <div key={idx} className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
-                    <img src={img} alt={`Heineken Gallery ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                ))}
-              </div>
+      {/* Images Section - 1x1 images for BARCA1, BARCA2, BARCA3 */}
+      <section className="mb-16">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {["/barcelona/BARCA1.webp", "/barcelona/BARCA2.webp", "/barcelona/BARCA3.webp"].map((img, idx) => (
+                <div key={idx} className="group relative aspect-square rounded-lg overflow-hidden cursor-pointer">
+                  <img src={img} alt={`Barcelona 1x1 ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              ))}
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* BIG IDEA */}
       <section className="mb-16">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black mb-6">THE BIG IDEA</h2>
+            <h2 className="text-2xl md:text-3xl font-black mb-6">A Proven Formula for Your Club</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-main text-lg leading-relaxed mb-4">{caseData.solution}</p>
-              <p className="text-main text-lg leading-relaxed">{caseData.results}</p>
+              <p className="text-main text-lg leading-relaxed mb-4">{caseData.results}</p>
             </div>
           </div>
         </div>
