@@ -1,3 +1,14 @@
+/* Prevent horizontal scroll hijacking on mobile cards */
+@media (max-width: 767px) {
+  .cases-grid {
+    overscroll-behavior-x: contain;
+    overscroll-behavior-y: auto;
+    touch-action: pan-x pan-y !important;
+  }
+  .case-card {
+    touch-action: pan-y !important;
+  }
+}
 /* Only for header button: orange bg, white text */
 .brand-button--header {
     background: #FF7A00 !important;
@@ -2230,6 +2241,9 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 480px;
     display: flex;
     flex-direction: column;
+    pointer-events: auto;
+    cursor: pointer;
+    touch-action: pan-y !important;
 }
 .case-card:hover {
     transform: translateY(-4px) scale(1.03);
@@ -2432,12 +2446,19 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 1rem; /* Space for shadows/scrollbar */
     scrollbar-width: none; /* Firefox */
     user-select: none;
+/* Fix: allow vertical scroll on mobile when touching cards */
+@media (max-width: 767px) {
+  .cases-grid {
+    touch-action: pan-y;
+  }
+}
 }
 
 /* Case cards should not interfere with page scrolling */
 .case-card {
     pointer-events: auto;
     cursor: pointer;
+    touch-action: pan-y !important;
 }
 .cases-grid.grabbing {
     cursor: grabbing;
@@ -3160,8 +3181,10 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 480px;
     display: flex;
     flex-direction: column;
+    pointer-events: auto;
+    cursor: pointer;
+    touch-action: pan-y !important;
 }
-
 .case-card:hover {
     transform: translateY(-4px) scale(1.03);
     box-shadow: 0 8px 30px rgba(255, 122, 0, 0.15);
