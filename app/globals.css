@@ -3,11 +3,9 @@
   .cases-grid {
     overscroll-behavior-x: contain;
     overscroll-behavior-y: auto;
-    touch-action: pan-x pan-y !important;
+    touch-action: pan-x !important;
   }
-  .case-card {
-    touch-action: pan-y !important;
-  }
+  /* Verwijder touch-action van .case-card zodat grid het afhandelt */
 }
 /* Only for header button: orange bg, white text */
 .brand-button--header {
@@ -2440,19 +2438,25 @@ h1, h2, h3, h4, h5, h6 {
 .cases-grid {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 1.5rem;
     padding-bottom: 1rem; /* Space for shadows/scrollbar */
     scrollbar-width: none; /* Firefox */
-    user-select: none;
-    overflow-y: hidden;
+    scroll-behavior: smooth;
+    touch-action: pan-x;
 }
 
 /* Fix: allow vertical scroll on mobile when touching cards */
 @media (max-width: 767px) {
   .cases-grid {
-    touch-action: pan-y;
+    touch-action: pan-x !important;
+    overscroll-behavior-x: contain;
+    cursor: grab;
+  }
+  .cases-grid:active {
+    cursor: grabbing;
   }
 }
 
@@ -2460,7 +2464,8 @@ h1, h2, h3, h4, h5, h6 {
 .case-card {
     pointer-events: auto;
     cursor: pointer;
-    touch-action: pan-y !important;
+    touch-action: manipulation;
+    user-select: none;
 }
 .cases-grid.grabbing {
     cursor: grabbing;
