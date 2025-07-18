@@ -5,7 +5,7 @@
     overscroll-behavior-y: auto;
     touch-action: pan-x !important;
   }
-  /* Verwijder touch-action van .case-card zodat grid het afhandelt */
+  /* Verwijder touch-action van .case-card zodat grid het afhandelt - niet meer nodig, wrapper verwijderd */
 }
 /* Only for header button: orange bg, white text */
 .brand-button--header {
@@ -2437,7 +2437,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Cases Carousel on Mobile */
 .cases-grid {
     display: flex;
-    overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -3202,4 +3201,20 @@ h1, h2, h3, h4, h5, h6 {
     border-top-right-radius: var(--brand-card-radius);
     overflow: hidden;
 }
+
+/* --- Card grid scroll fix --- */
+.cases-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 1rem;
+    width: 100%;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    pointer-events: auto;
+}
+
+/* Removed .case-card-wrapper styles, restored .case-card for original structure */
+/* --- end card grid scroll fix --- */
 
