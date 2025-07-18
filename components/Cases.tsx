@@ -30,11 +30,11 @@ const CaseCard = ({ study, delay }: { study: CaseStudy, delay: string }) => {
         case 'KNVB - Dutch Football Association':
             casePath = '/case/knvb';
             break;
-        case 'Red Bull Racing & Honda':
+        case 'Holland Casino & DutchGP':
             casePath = '/case/red-bull-racing-honda';
             break;
-        case 'BWT Alpine F1 Team':
-            casePath = '/case/bwt-alpine-f1';
+        case 'KNHB / PRO LEAGUE HOCKEY':
+            casePath = '/case/pro-league-hockey';
             break;
         default:
             casePath = '#';

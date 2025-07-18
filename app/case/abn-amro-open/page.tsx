@@ -37,7 +37,7 @@ export default function ABNAMROOpenCasePage() {
         <div className="container mx-auto px-6 py-4">
           <Link href="/#cases" className="inline-flex items-center gap-2 text-brand-text hover:text-brand-primary transition-colors">
             <ArrowLeft className="w-5 h-5" />
-            <span>All cases</span>
+            <span>Home</span>
           </Link>
         </div>
       </header>
@@ -163,7 +163,7 @@ export default function ABNAMROOpenCasePage() {
                   Start your project
                 </Link>
                 <Link href="/#cases" className="brand-button-secondary">
-                  View more cases
+                  Home
                 </Link>
               </div>
             </div>

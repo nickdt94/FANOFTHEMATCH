@@ -22,21 +22,21 @@ const InteractiveQuiz: React.FC = () => {
   const questions: QuizQuestion[] = [
     {
       id: 1,
-      question: "Wie scoorde het winnende doelpunt in de Champions League finale van 2023?",
+      question: "Who scored the winning goal in the 2023 Champions League final?",
       answers: ["Rodri", "Kevin De Bruyne", "Erling Haaland", "Riyad Mahrez"],
       correctAnswer: 0,
       category: "Champions League"
     },
     {
       id: 2,
-      question: "In welk jaar werd de UEFA Europa League opgericht?",
+      question: "In which year was the UEFA Europa League founded?",
       answers: ["1971", "1972", "1970", "1973"],
       correctAnswer: 0,
       category: "Europa League"
     },
     {
       id: 3,
-      question: "Welke Nederlandse club heeft de meeste Europese prijzen gewonnen?",
+      question: "Which Dutch club has won the most European trophies?",
       answers: ["PSV", "Feyenoord", "Ajax", "AZ"],
       correctAnswer: 2,
       category: "Nederlandse voetbal"
@@ -114,16 +114,16 @@ const InteractiveQuiz: React.FC = () => {
     return (
       <div className="bg-gradient-to-br from-orange-600 to-orange-800 rounded-brand p-8 text-white text-center max-w-md mx-auto">
         <Trophy className="w-16 h-16 mx-auto mb-4 text-yellow-400" />
-        <h3 className="text-2xl font-bold mb-4">Quiz Voltooid!</h3>
+        <h3 className="text-2xl font-bold mb-4">Quiz Completed!</h3>
         <div className="mb-6">
           <div className="text-4xl font-black text-[#A2E832] mb-2">{score}/{questions.length}</div>
-          <p className="text-lg">Correct beantwoord</p>
+          <p className="text-lg">Correctly answered</p>
         </div>
         <button 
           onClick={resetQuiz}
           className="bg-[#A2E832] text-black px-6 py-3 rounded-full font-bold hover:bg-[#8BC728] transition-colors duration-200"
         >
-          Opnieuw Spelen
+          Play Again
         </button>
       </div>
     );
@@ -150,7 +150,7 @@ const InteractiveQuiz: React.FC = () => {
       {/* Progress */}
       <div className="mb-6">
         <div className="flex justify-between text-sm mb-2">
-          <span>Vraag {currentQuestion + 1} van {questions.length}</span>
+          <span>Question {currentQuestion + 1} of {questions.length}</span>
           <span>{score} correct</span>
         </div>
         <div className="w-full bg-orange-900 rounded-full h-2">
@@ -192,10 +192,10 @@ const InteractiveQuiz: React.FC = () => {
         <div className="flex items-center justify-center space-x-4 text-sm opacity-90">
           <div className="flex items-center space-x-1">
             <Users className="w-4 h-4" />
-            <span>1.2K spelers</span>
+            <span>1.2K players</span>
           </div>
           <div className="w-1 h-1 bg-white rounded-full"></div>
-          <span>Live in stadion</span>
+          <span>Live in stadium</span>
         </div>
       </div>
     </div>

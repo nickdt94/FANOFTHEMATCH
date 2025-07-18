@@ -3,27 +3,23 @@ import Link from 'next/link';
 import Spotlight from '@/components/Spotlight';
 
 const caseData = {
-  title: "Mobile race game for F1 fans in the US",
-  category: "Red Bull Racing & Honda",
-  description: "Honda and Red Bull Racing wanted to activate their successful partnership digitally in an innovative way towards Formula 1 fans in the US with a fun mobile race game.",
-  image: "https://a.storyblok.com/f/174314/5760x2160/9a3e422d96/header-rbr-honda.jpg/m/1500x0/filters:format(webp):quality(80)",
-  heroImage: "https://a.storyblok.com/f/174314/5760x2160/9a3e422d96/header-rbr-honda.jpg/m/1500x0/filters:format(webp):quality(80)",
-  additionalImages: [
-    "https://a.storyblok.com/f/174314/5760x2160/9a3e422d96/header-rbr-honda.jpg/m/1500x0/filters:format(webp):quality(80)",
-    "https://a.storyblok.com/f/174314/5760x2160/9a3e422d96/header-rbr-honda-2.jpg/m/1500x0/filters:format(webp):quality(80)",
-    "https://a.storyblok.com/f/174314/5760x2160/9a3e422d96/header-rbr-honda-3.jpg/m/1500x0/filters:format(webp):quality(80)"
-  ],
-  videoUrl: undefined,
-  metrics: [
-    { icon: Users, value: "100K+", label: "Game Players" },
-    { icon: Target, value: "75%", label: "Completion Rate" },
-    { icon: TrendingUp, value: "180%", label: "Engagement Growth" }
-  ],
-  challenge: "Honda USA and Red Bull wanted to activate their partnership digitally in an innovative way towards Formula 1 fans in the US.",
-  solution: "The challenge: develop a striking campaign with a mobile game that is innovative but also exudes 'fun & entertainment'.",
-  results: "The campaign saw over 100,000 players and a 75% completion rate, with strong brand engagement.",
-  impact: "Red Bull Racing & Honda set a new bar for digital fan activations in motorsport.",
-  recognition: "Recognized for creativity and digital innovation in sports marketing."
+title: "Maximum Race Fun with Bingo Show",
+category: "Holland Casino & DutchGP",
+description: "During the Formula 1 Heineken Dutch Grand Prix in Zandvoort, partner Holland Casino aimed to actively involve and enhance the engagement of thousands of race fans in the fan zones. Leveraging our expertise in interactive tools, we created an interactive and dynamic, Formula 1-themed Bingo Show.",
+image: "/DUTCHGP/Dutchgp3.png",
+heroImage: "/DUTCHGP/Dutchgp1.png",
+additionalImages: [
+  "/DUTCHGP/Dutchgp1.png",
+  "/DUTCHGP/Dutchgp2.png",
+  "/DUTCHGP/Dutchgp3.png",
+],
+videoUrl: undefined,
+metrics: undefined,
+challenge: "Fans participated in fast-paced bingo rounds, contributing to a unique and competitive atmosphere. The results included:",
+solution: "Direct Fan Engagement: Active participation and elevated atmosphere.\n\nStrong Brand Activation: Holland Casino was directly associated with fun and excitement.",
+results: "This collaboration demonstrates how Fan of the Match delivers successful brand activation and unforgettable fan experiences at large-scale events. Our tooling also offers the option for an engaging music bingo.",
+impact: undefined,
+recognition: undefined
 };
 
 export default function RedBullRacingHondaCasePage() {
@@ -61,32 +57,14 @@ export default function RedBullRacingHondaCasePage() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Metrics */}
-      <section className="mb-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {caseData.metrics.map((metric, index) => (
-                <div key={index} className="text-center">
-                  <div className="inline-flex items-center justify-center w-14 h-14 bg-brand-primary/20 rounded-full mb-3">
-                    <metric.icon className="w-7 h-7 text-brand-primary" />
-                  </div>
-                  <div className="text-2xl font-black text-brand-text-heading mb-1">{metric.value}</div>
-                  <div className="text-inactive text-sm">{metric.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* No metrics for this case */}
 
       {/* Project Overview */}
       <section className="mb-16">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black mb-6">PROJECT OVERVIEW</h2>
+            <h2 className="text-2xl md:text-3xl font-black mb-6">FULL-THROTTLE FAN ENGAGEMENT</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-main text-lg leading-relaxed">{caseData.challenge}</p>
             </div>
@@ -94,68 +72,44 @@ export default function RedBullRacingHondaCasePage() {
         </div>
       </section>
 
-      {/* Images Section - No video for this case */}
-      {caseData.additionalImages && (
-        <section className="mb-16">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {caseData.additionalImages.map((img, idx) => (
-                  <div key={idx} className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
-                    <img src={img} alt={`Red Bull Racing & Honda Gallery ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* ...existing code... */}
+      </section>
 
+      {/* BIG IDEA */}
       {/* BIG IDEA */}
       <section className="mb-16">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black mb-6">THE BIG IDEA</h2>
             <div className="prose prose-lg max-w-none">
-              <p className="text-main text-lg leading-relaxed mb-4">{caseData.solution}</p>
+              <p className="text-main text-lg leading-relaxed mb-4">{caseData.challenge}</p>
+              <ul className="list-disc pl-6 text-main text-lg mb-4">
+                <li>Direct Fan Engagement: Active participation and elevated atmosphere.</li>
+                <li>Strong Brand Activation: Holland Casino was directly associated with fun and excitement.</li>
+              </ul>
               <p className="text-main text-lg leading-relaxed">{caseData.results}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Large Feature Image */}
-      <section className="mb-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="relative aspect-[21/9] rounded-xl overflow-hidden">
-              <img src={caseData.image} alt={`${caseData.title} - Feature`} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact & Recognition */}
-      <section className="mb-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-black mb-4">Impact</h3>
-                <p className="text-main leading-relaxed">{caseData.impact}</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-black mb-4">Recognition</h3>
-                <p className="text-main leading-relaxed">{caseData.recognition}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* No impact & recognition for this case */}
 
       {/* Call to Action */}
+      {/* Images Section - three DutchGP images above contact */}
+      <section className="mb-16">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {caseData.additionalImages.map((img, idx) => (
+                <div key={idx} className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
+                  <img src={img} alt={`DutchGP Gallery ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="pb-16">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">

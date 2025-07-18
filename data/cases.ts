@@ -85,20 +85,20 @@ export const caseStudies: CaseStudy[] = [
         url: "https://www.wecreatewaves.com/knvb-dutch-football-asociation"
     },
     {
-        image: "https://a.storyblok.com/f/174314/5760x2160/9a3e422d96/header-rbr-honda.jpg/m/1500x0/filters:format(webp):quality(80)",
-        category: "Red Bull Racing & Honda",
-        title: "Mobile race game",
-        description: "Honda and Red Bull Racing wanted to activate their successful partnership digitally in an innovative way towards Formula 1 fans in the US with a fun mobile race game.",
-        longDescription: "Honda and Red Bull Racing have a successful partnership in Formula 1. The sport has grown in popularity in the United States in recent years. Honda USA and Red Bull therefore wanted to activate their partnership digitally in an innovative way towards Formula 1 fans in the US. Red Bull Racing and Honda are innovative brands. This was also reflected in the challenge they gave us: develop a striking campaign with a mobile game that is innovative but also exudes 'fun & entertainment'. The game served a wide audience of fans and not just die-hard Formula 1 fans.",
-        url: "https://www.wecreatewaves.com/ourwork/Red-Bull-Racing"
+        image: "/DUTCHGP/Dutchgp1.png",
+        category: "Holland Casino & DutchGP",
+        title: "Maximum Race Fun with Bingo Show",
+        description: "During the Formula 1 Heineken Dutch Grand Prix in Zandvoort, partner Holland Casino aimed to actively involve and enhance the engagement of thousands of race fans in the fan zones. Leveraging our expertise in interactive tools, we created an interactive and dynamic, Formula 1-themed Bingo Show.",
+        longDescription: "Fans participated in fast-paced bingo rounds, contributing to a unique and competitive atmosphere. The results included:\n\n- Direct Fan Engagement: Active participation and elevated atmosphere.\n- Strong Brand Activation: Holland Casino was directly associated with fun and excitement.\n\nThis collaboration demonstrates how Fan of the Match delivers successful brand activation and unforgettable fan experiences at large-scale events. Our tooling also offers the option for an engaging music bingo.",
+        url: "/case/red-bull-racing-honda"
     },
     {
-        image: "https://a.storyblok.com/f/174314/1920x750/ddf73d2f55/header.png/m/1500x525/filters:format(webp):quality(80)",
-        category: "BWT Alpine F1 Team",
-        title: "Rush Racers",
-        description: "With the launch of their new RISE+ platform, Alpine set out to redefine how they connect with fans, reintroducing the fan-favorite racing game, Rush Racers, as a key interactive feature.",
-        longDescription: "With the launch of their new RISE+ platform, Alpine set out to redefine how they connect with fans—offering exclusive content, experiences, and rewards all in one place. As part of this bold move, they needed to refresh and reintroduce Rush Racers, the fan-favorite racing game, as a key interactive feature within the platform. The challenge for Wave was to evolve the game for a new season while ensuring it aligned perfectly with the creative vision and branding of RISE+. It needed to be fun, competitive, and immediately recognizable as part of the BWT Alpine Formula One Team universe—all while integrating smoothly into the new loyalty ecosystem powered by Alpine's Fan Engagement team.",
-        url: "https://www.wecreatewaves.com/ourwork/alpine-f1-race-game"
+        image: "/stadium/Contentwall 1.png",
+        category: "KNHB / PRO LEAGUE HOCKEY",
+        title: "Pro League Hockey: Your Role in Victory!",
+        description: "The Royal Dutch Hockey Association is proud to be one of the largest sports federations in the Netherlands, and our national teams have proven their place among the world's elite for years. For the exciting Pro League Hockey, we've formed a fantastic partnership with ONVZ, where entertainment and fan engagement are key pillars.",
+        longDescription: "AN IMMERSIVE PITCH-SIDE EXPERIENCE\nTogether with Goalden, we've put together a unique and tailor-made interactive program. With an energetic presenter on the field and among the crowd in the stands, and a DJ setting the perfect mood, we create a lively and atmospheric experience. This is your chance to actively participate in the match day!\n\nTest your knowledge of hockey and the players with the challenging Fan of the Match quiz. And be ready for the FanCam, because your enthusiasm for Orange is essential! Make some noise, cheer along, and encourage our heroes on their way to victory. Your passion makes the difference!\n\nReady to ignite your fan engagement and create truly memorable experiences?\nDiscover how Fan of the Match can elevate your next event!",
+        url: "/case/pro-league-hockey"
     }
 ];
 
