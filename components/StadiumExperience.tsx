@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import Image from 'next/image';
 
 const lerp = (start: number, end: number, progress: number) => {
     return start * (1 - progress) + end * progress;
@@ -69,9 +70,9 @@ const StadiumExperience: React.FC = () => {
                 <div id="stadium-phone-block" ref={phoneBlockRef}>
                     <div className="phone-mockup">
                         <div className="phone-screen">
-                            <img ref={screen1Ref} src="https://scale.lwcdn.nl//file?site=cases&group=1&cropped=1&orientation=&w=undefined&h=undefined&file=1525341269_ajax_4.png" alt="Welkomstscherm van de game in dark mode" />
-                            <img ref={screen2Ref} src="https://scale.lwcdn.nl//file?site=cases&group=1&cropped=1&orientation=&w=undefined&h=undefined&file=1525341269_ajax_5.png" alt="Teamscherm van de game in dark mode" />
-                            <img ref={screen3Ref} src="https://scale.lwcdn.nl//file?site=cases&group=1&cropped=1&orientation=&w=undefined&h=undefined&file=1525341269_2_0_profile.png" alt="Vraagscherm van de game in dark mode" />
+                            <Image ref={screen1Ref} src="https://scale.lwcdn.nl//file?site=cases&group=1&cropped=1&orientation=&w=undefined&h=undefined&file=1525341269_ajax_4.png" alt="Welkomstscherm van de game in dark mode" width={800} height={600} />
+                            <Image ref={screen2Ref} src="https://scale.lwcdn.nl//file?site=cases&group=1&cropped=1&orientation=&w=undefined&h=undefined&file=1525341269_ajax_5.png" alt="Teamscherm van de game in dark mode" width={800} height={600} />
+                            <Image ref={screen3Ref} src="https://scale.lwcdn.nl//file?site=cases&group=1&cropped=1&orientation=&w=undefined&h=undefined&file=1525341269_2_0_profile.png" alt="Vraagscherm van de game in dark mode" width={800} height={600} />
                         </div>
                     </div>
                 </div>

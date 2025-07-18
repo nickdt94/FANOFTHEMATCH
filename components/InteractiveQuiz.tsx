@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Clock, Users, Trophy } from 'lucide-react';
 
 interface QuizQuestion {
@@ -44,9 +44,21 @@ const InteractiveQuiz: React.FC = () => {
   ];
 
   // Timer countdown
+  // Memoize handleNextQuestion to avoid React warning and timer bugs
+  const handleNextQuestion = useCallback(() => {
+    if (currentQuestion + 1 < questions.length) {
+      setCurrentQuestion(currentQuestion + 1);
+      setSelectedAnswer(null);
+      setTimeLeft(15);
+      setIsActive(true);
+    } else {
+      setShowResult(true);
+      setIsActive(false);
+    }
+  }, [currentQuestion, questions.length]);
+
   useEffect(() => {
     let interval: NodeJS.Timeout;
-    
     if (isActive && timeLeft > 0 && !showResult) {
       interval = setInterval(() => {
         setTimeLeft(timeLeft => timeLeft - 1);
@@ -54,9 +66,8 @@ const InteractiveQuiz: React.FC = () => {
     } else if (timeLeft === 0 && !showResult) {
       handleNextQuestion();
     }
-
     return () => clearInterval(interval);
-  }, [isActive, timeLeft, showResult]);
+  }, [isActive, timeLeft, showResult, handleNextQuestion]);
 
   const handleAnswerSelect = (answerIndex: number) => {
     if (selectedAnswer !== null) return;
@@ -73,17 +84,7 @@ const InteractiveQuiz: React.FC = () => {
     }, 2000);
   };
 
-  const handleNextQuestion = () => {
-    if (currentQuestion + 1 < questions.length) {
-      setCurrentQuestion(currentQuestion + 1);
-      setSelectedAnswer(null);
-      setTimeLeft(15);
-      setIsActive(true);
-    } else {
-      setShowResult(true);
-      setIsActive(false);
-    }
-  };
+  // ...existing code...
 
   const resetQuiz = () => {
     setCurrentQuestion(0);

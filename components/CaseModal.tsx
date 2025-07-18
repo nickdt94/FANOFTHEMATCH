@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 import type { CaseStudy } from './Cases';
+import Image from 'next/image';
 
 interface CaseModalProps {
     caseData: CaseStudy;
@@ -29,7 +30,7 @@ const CaseModal: React.FC<CaseModalProps> = ({ caseData, onClose }) => {
                 <button onClick={onClose} className="modal-close-button" aria-label="Sluiten">
                     <X className="w-6 h-6" />
                 </button>
-                <img src={caseData.image} alt={caseData.title} className="modal-image" />
+                <Image src={caseData.image} alt={caseData.title} className="modal-image" width={800} height={250} />
                 <div className="modal-text-content p-6 md:p-8">
                     <div className="flex-grow overflow-y-auto pr-4">
                         <p className="font-bold mb-1" style={{ color: '#FF7A00' }}>{caseData.category}</p>

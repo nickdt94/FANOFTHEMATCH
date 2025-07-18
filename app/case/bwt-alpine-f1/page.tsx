@@ -1,4 +1,5 @@
 import { ArrowLeft, Users, Target, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import Spotlight from '@/components/Spotlight';
 
@@ -56,7 +57,7 @@ export default function BWTAlpineF1CasePage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="relative aspect-[16/9] rounded-2xl overflow-hidden">
-              <img src={caseData.heroImage} alt={caseData.title} className="w-full h-full object-cover" />
+              <Image src={caseData.heroImage} alt={caseData.title} className="w-full h-full object-cover" width={1920} height={1080} />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
             </div>
           </div>
@@ -102,7 +103,7 @@ export default function BWTAlpineF1CasePage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {caseData.additionalImages.map((img, idx) => (
                   <div key={idx} className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
-                    <img src={img} alt={`Rush Racers Gallery ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                    <Image src={img} alt={`Rush Racers Gallery ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" width={1920} height={1080} />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 ))}

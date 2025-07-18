@@ -1,4 +1,5 @@
 import { ArrowLeft, Users, Target, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import Spotlight from '@/components/Spotlight';
 
@@ -54,7 +55,7 @@ export default function UefaCasePage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="relative aspect-[16/9] rounded-2xl overflow-hidden">
-              <img src={caseData.heroImage} alt={caseData.title} className="w-full h-full object-cover" />
+              <Image src={caseData.heroImage} alt={caseData.title} className="w-full h-full object-cover" width={1920} height={1080} />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
             </div>
           </div>
@@ -114,7 +115,7 @@ export default function UefaCasePage() {
                 <div className="flex-shrink-0">
                   <div className="grid grid-cols-1 gap-4 w-80">
                     <div className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
-                      <img src="/stadium/Euros1.jpg" alt="UEFA Champions League Final - Munich" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <Image src="/stadium/Euros1.jpg" alt="UEFA Champions League Final - Munich" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" width={1920} height={1080} />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <h3 className="font-bold text-sm">Munich</h3>
@@ -122,7 +123,7 @@ export default function UefaCasePage() {
                       </div>
                     </div>
                     <div className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
-                      <img src="/stadium/Euros2.webp" alt="UEFA Europa League Final - Bilbao" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <Image src="/stadium/Euros2.webp" alt="UEFA Europa League Final - Bilbao" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" width={1920} height={1080} />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <h3 className="font-bold text-sm">Bilbao</h3>
@@ -130,7 +131,7 @@ export default function UefaCasePage() {
                       </div>
                     </div>
                     <div className="group relative aspect-[16/9] rounded-lg overflow-hidden cursor-pointer">
-                      <img src="/stadium/Euros1.jpg" alt="UEFA Conference League Final - Wroclaw" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <Image src="/stadium/Euros1.jpg" alt="UEFA Conference League Final - Wroclaw" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" width={1920} height={1080} />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <h3 className="font-bold text-sm">Wroclaw</h3>
@@ -164,7 +165,7 @@ export default function UefaCasePage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="relative aspect-[21/9] rounded-xl overflow-hidden">
-              <img src={caseData.image} alt={`${caseData.title} - Feature`} className="w-full h-full object-cover" />
+              <Image src={caseData.image} alt={`${caseData.title} - Feature`} className="w-full h-full object-cover" width={1920} height={1080} />
               <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30"></div>
             </div>
           </div>

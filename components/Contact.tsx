@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { Mail, Play, X } from 'lucide-react';
 import HubspotFormWrapper from './HubspotFormWrapper';
 
@@ -90,7 +91,7 @@ const Contact: React.FC = () => {
       </div>
 
 
-      {/* Demo Modal */}
+      {/* Demo Modal - client-only iframe to prevent hydration mismatch */}
       {showDemoModal && (
         <div className="demo-modal-overlay" onClick={() => setShowDemoModal(false)}>
           <div className="demo-modal-content" onClick={(e) => e.stopPropagation()}>
@@ -105,13 +106,15 @@ const Contact: React.FC = () => {
               <p>Ontdek hoe onze spelmodi jouw fan engagement transformeren</p>
             </div>
             <div className="demo-modal-iframe">
-              <iframe
-                src="https://cal.com/koen-verhoof/30min?user=koen-verhoof&overlayCalendar=true"
-                width="100%"
-                height="600"
-                frameBorder="0"
-                title="Book Demo"
-              />
+              {typeof window !== 'undefined' && (
+                <iframe
+                  src="https://cal.com/koen-verhoof/30min?user=koen-verhoof&overlayCalendar=true"
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  title="Book Demo"
+                />
+              )}
             </div>
           </div>
         </div>

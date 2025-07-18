@@ -7,6 +7,7 @@ const nextConfig = {
     domains: [
       'images.unsplash.com',
       'a.storyblok.com',
+      'images.ctfassets.net',
     ],
   },
 }

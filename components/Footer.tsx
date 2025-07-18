@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
   return (
@@ -40,7 +41,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-center md:items-end md:w-1/3 mt-6 md:mt-0">
           <span className="text-white font-semibold mb-2">Follow us on:</span>
           <a href="https://www.linkedin.com/company/wecreatewaves/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <img src="/Footer/linkedin.svg" alt="LinkedIn" className="h-9 w-9 filter invert opacity-90 hover:invert-0 hover:brightness-0 hover:opacity-100 transition border border-white rounded-full p-1" />
+            <Image src="/Footer/linkedin.svg" alt="LinkedIn" width={36} height={36} className="h-9 w-9 filter invert opacity-90 hover:invert-0 hover:brightness-0 hover:opacity-100 transition border border-white rounded-full p-1" />
           </a>
         </div>
       </div>
