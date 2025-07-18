@@ -47,10 +47,10 @@ export default function KNVBCasePage() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-black mb-6">A FULL MATCHDAY EXPERIENCE</h2>
             <p className="text-main text-lg leading-relaxed mb-4">
-              The excitement builds even before kick-off with the use of the ContentWall and interactive polls. Fans can actively participate, for instance, by voting for their favorite songs, with the most requested tracks being played during the team's warm-up. This fosters a unique sense of involvement, making fans an integral part of the pre-match build-up.
+              The excitement builds even before kick-off with the use of the ContentWall and interactive polls. Fans can actively participate, for instance, by voting for their favorite songs, with the most requested tracks being played during the team&apos;s warm-up. This fosters a unique sense of involvement, making fans an integral part of the pre-match build-up.
             </p>
             <p className="text-main text-lg leading-relaxed mb-4">
-              During halftime, the stadium buzzes with the KPN Fan of the Match Quiz. This engaging interactive experience, proudly sponsored by KPN, offers fans the chance to win incredible prizes, from brand new smartphones and tickets for the next match, to exclusive signed items. It's a thrilling opportunity for fans to test their knowledge and feel even closer to the action. Beyond the entertainment, this quiz is a prime example of how the KNVB can secure opt-ins for partners like KPN, demonstrating tangible value for sponsors.
+              During halftime, the stadium buzzes with the KPN Fan of the Match Quiz. This engaging interactive experience, proudly sponsored by KPN, offers fans the chance to win incredible prizes, from brand new smartphones and tickets for the next match, to exclusive signed items. It&apos;s a thrilling opportunity for fans to test their knowledge and feel even closer to the action. Beyond the entertainment, this quiz is a prime example of how the KNVB can secure opt-ins for partners like KPN, demonstrating tangible value for sponsors.
             </p>
             <p className="text-main text-lg leading-relaxed">
               By embracing Fan of the Match, the KNVB is not just hosting football matches, but curating a truly immersive and unforgettable experience for its passionate fanbase.
