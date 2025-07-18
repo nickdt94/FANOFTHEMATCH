@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import { Mail, Play, X } from 'lucide-react';
 import HubspotFormWrapper from './HubspotFormWrapper';
 
